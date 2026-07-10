@@ -3,7 +3,6 @@
 description: Builds RTL Persian UI for the scarf WordPress theme with lightweight CSS/JS
 mode: subagent
 temperature: 0.2
-permission:
 edit: ask
 bash: ask
 webfetch: deny

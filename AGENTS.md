@@ -736,3 +736,7 @@ This project has a `DESIGN_SYSTEM.md` file in the project root. All UI, RTL, Woo
 
 
 Image-based sections such as hero banners, category cards, campaign blocks, and product cards must be designed image-first; when real brand/store images are not available during development, use suitable local Persian scarf/shawl placeholders instead of external or copyrighted images.
+
+
+
+playwrite screenshot and redontant files should be stored in a structured way and add to git ignore

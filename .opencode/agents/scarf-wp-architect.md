@@ -3,7 +3,6 @@
 description: Plans WordPress/WooCommerce architecture for the scarf theme without editing files
 mode: subagent
 temperature: 0.1
-permission:
 edit: deny
 bash: deny
 webfetch: ask

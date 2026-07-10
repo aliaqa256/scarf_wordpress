@@ -3,7 +3,6 @@
 description: Audits the scarf theme in browser using Playwright MCP for RTL, responsive UI, and WooCommerce flows
 mode: subagent
 temperature: 0.1
-permission:
 edit: deny
 bash: ask
 webfetch: deny
