@@ -548,3 +548,191 @@ Ask @scarf-ui-builder to implement the approved stage.
 Ask @scarf-playwright-auditor to validate visual/browser behavior when relevant.
 
 The main agent remains responsible for respecting this AGENTS.md, the user request, and the current stage scope
+
+
+
+
+## Project Handoff File
+
+This project must maintain a `HANDOFF.md` file in the project root.
+
+Purpose:
+
+- Keep useful project history across OpenCode sessions.
+- Make session switching safe and easy.
+- Preserve important decisions, constraints, completed stages, and known issues.
+- Prevent future agents from guessing or repeating old work.
+
+Required file:
+
+```text
+HANDOFF.md
+
+The file must be updated after every meaningful operation.
+
+A meaningful operation includes:
+
+Creating or modifying project files
+Completing a stage
+Changing architecture decisions
+Adding or removing a dependency
+Adding or changing a custom theme feature
+Adding or changing a custom scart-* plugin
+Changing WooCommerce behavior
+Running Playwright validation
+Finding an important bug or limitation
+Making a decision that future sessions must know
+
+Do not update HANDOFF.md for tiny non-project actions, such as reading files only, unless the reading produced an important decision or discovery.
+
+HANDOFF.md Best Practices
+
+HANDOFF.md must be concise, factual, and useful.
+
+Do not turn it into a long diary.
+
+Do not paste huge logs.
+
+Do not include secrets, passwords, tokens, database credentials, private keys, .env content, or wp-config.php values.
+
+Do not include temporary thoughts or uncertain guesses.
+
+Only include information that helps a future agent continue the project safely.
+
+Required HANDOFF.md Structure
+
+Use this structure:
+
+# HANDOFF.md — Scarf WordPress Theme Project
+
+## Current Status
+
+Briefly describe the current state of the project.
+
+Example:
+
+- Theme `scarf` exists.
+- WooCommerce support has been added.
+- Header base layout is implemented.
+- Mobile menu still needs browser validation.
+
+## Important Rules
+
+Keep only project-specific rules that future sessions must not miss.
+
+Examples:
+
+- Theme name is `scarf`.
+- Custom plugins must start with `scart-`.
+- RTL/Persian-first.
+- Digikala is UX inspiration only; do not copy assets, exact UI, code, or brand identity.
+- Do not manage Git unless the user explicitly asks.
+- Use Playwright MCP for visual/browser validation when relevant.
+
+## Completed Stages
+
+Use reverse chronological order.
+
+Format:
+
+### Stage X — Short title
+
+Date: YYYY-MM-DD
+
+Summary:
+
+- ...
+
+Files changed:
+
+- `path/to/file`
+- `path/to/file`
+
+Validation:
+
+- Static:
+- Playwright:
+- Manual:
+
+Notes:
+
+- ...
+
+## Current Open Tasks
+
+List unfinished work that is already known.
+
+- ...
+
+## Architecture Decisions
+
+Record decisions that affect future implementation.
+
+Examples:
+
+- Product presentation belongs in the theme.
+- AI try-on must be implemented as a future `scart-*` plugin, not inside the theme.
+- Prefer WooCommerce hooks before template overrides.
+
+## Known Issues / Risks
+
+List bugs, limitations, or risks.
+
+- ...
+
+## Useful Local Commands
+
+Only include safe, non-destructive commands.
+
+Examples:
+
+```bash
+wp theme list
+wp plugin list
+
+Do not include destructive commands unless the user explicitly requested and approved them.
+
+Last Session Summary
+
+Short summary of the most recent meaningful session.
+
+What was requested:
+What changed:
+What should happen next:
+
+## HANDOFF Update Rule
+
+After every meaningful operation, update `HANDOFF.md` in the same stage.
+
+Every final stage report must mention whether `HANDOFF.md` was updated.
+
+If `HANDOFF.md` does not exist yet, create it before or during the first implementation stage.
+
+If the current task changes files but does not update `HANDOFF.md`, explain clearly why.
+
+## Handoff Quality Rules
+
+Good handoff entries are:
+
+- Short
+- Factual
+- Dated
+- Actionable
+- Free of secrets
+- Focused on decisions and project state
+
+Bad handoff entries include:
+
+- Long raw logs
+- Unverified guesses
+- Temporary reasoning
+- Repeated old information
+- Secrets or credentials
+- Huge copied code blocks
+
+## Design System Reference
+
+This project has a `DESIGN_SYSTEM.md` file in the project root. All UI, RTL, WooCommerce styling, Persian content tone, colors, spacing, product cards, filters, header, footer, and Ultimate Member page styling must follow `DESIGN_SYSTEM.md`. Do not copy Digikala assets, code, logo, exact UI, or proprietary brand identity; use it only as UX inspiration.
+
+
+Image-based sections such as hero banners, category cards, campaign blocks, and product cards must be designed image-first; when real brand/store images are not available during development, use suitable local Persian scarf/shawl placeholders instead of external or copyrighted images.
