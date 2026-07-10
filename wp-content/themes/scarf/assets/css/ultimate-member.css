@@ -1,0 +1,277 @@
+.um {
+	max-width: 800px;
+	margin-inline: auto;
+}
+
+.um-form {
+	background: var(--scarf-color-surface);
+	border: 1px solid var(--scarf-color-border);
+	border-radius: var(--scarf-radius-lg);
+	padding: var(--scarf-space-8);
+}
+
+.um-form input[type="text"],
+.um-form input[type="tel"],
+.um-form input[type="email"],
+.um-form input[type="password"],
+.um-form input[type="search"],
+.um-form textarea,
+.um-form select {
+	width: 100%;
+	height: var(--scarf-input-height);
+	padding-inline: var(--scarf-space-4);
+	font-size: var(--scarf-font-sm);
+	font-family: var(--scarf-font-family);
+	color: var(--scarf-color-text);
+	background: var(--scarf-color-surface);
+	border: 1px solid var(--scarf-color-border);
+	border-radius: var(--scarf-radius-lg);
+	box-shadow: none;
+	transition: border-color 0.15s;
+}
+
+.um-form input:focus,
+.um-form textarea:focus,
+.um-form select:focus {
+	border-color: var(--scarf-color-primary);
+	outline: none;
+}
+
+.um-form textarea {
+	height: auto;
+	min-height: 100px;
+	padding-block: var(--scarf-space-3);
+	resize: vertical;
+}
+
+.um-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--scarf-space-2);
+	padding: var(--scarf-space-3) var(--scarf-space-8);
+	font-size: var(--scarf-font-md);
+	font-weight: 700;
+	font-family: var(--scarf-font-family);
+	line-height: 1.4;
+	height: auto;
+	color: #fff;
+	background: var(--scarf-color-primary);
+	border: none;
+	border-radius: var(--scarf-radius-lg);
+	cursor: pointer;
+	transition: background-color 0.15s;
+	text-decoration: none;
+}
+
+.um-button:hover {
+	background: var(--scarf-color-primary-hover);
+	color: #fff;
+}
+
+.um-button.um-alt {
+	color: var(--scarf-color-primary);
+	background: var(--scarf-color-primary-soft);
+	border: 1px solid var(--scarf-color-primary);
+}
+
+.um-button.um-alt:hover {
+	background: var(--scarf-color-primary);
+	color: #fff;
+}
+
+.um-field-label {
+	font-size: var(--scarf-font-sm);
+	font-weight: 600;
+	color: var(--scarf-color-text);
+	margin-block-end: var(--scarf-space-2);
+}
+
+.um-field-area {
+	margin-block-end: var(--scarf-space-4);
+}
+
+.um-notice {
+	padding: var(--scarf-space-4) var(--scarf-space-5);
+	margin-block-end: var(--scarf-space-4);
+	border: 1px solid var(--scarf-color-border);
+	border-inline-start: 4px solid var(--scarf-color-primary);
+	border-radius: var(--scarf-radius-lg);
+	font-size: var(--scarf-font-sm);
+	color: var(--scarf-color-text);
+	background: var(--scarf-color-surface);
+}
+
+.um-notice.err {
+	border-inline-start-color: var(--scarf-color-danger);
+}
+
+.um-notice.success {
+	border-inline-start-color: var(--scarf-color-success);
+}
+
+.um-field-error {
+	padding: var(--scarf-space-2) var(--scarf-space-4);
+	font-size: var(--scarf-font-xs);
+	color: var(--scarf-color-danger);
+	background: var(--scarf-color-primary-soft);
+	border-radius: var(--scarf-radius-sm);
+	margin-block-start: var(--scarf-space-1);
+}
+
+.um-profile-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	margin: 0 0 var(--scarf-space-6);
+	padding: 0;
+	border-block-end: 2px solid var(--scarf-color-border);
+	list-style: none;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.um-profile-nav-item {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+
+.um-profile-nav-item a {
+	display: block;
+	padding: var(--scarf-space-3) var(--scarf-space-5);
+	font-size: var(--scarf-font-sm);
+	font-weight: 500;
+	color: var(--scarf-color-text-soft);
+	text-decoration: none;
+	border-block-end: 2px solid transparent;
+	margin-block-end: -2px;
+	transition: color 0.15s, border-color 0.15s;
+	white-space: nowrap;
+}
+
+.um-profile-nav-item a:hover {
+	color: var(--scarf-color-text);
+}
+
+.um-profile-nav-item.active a {
+	color: var(--scarf-color-primary);
+	border-block-end-color: var(--scarf-color-primary);
+	background: none;
+}
+
+.um-profile-photo a.um-profile-photo-img {
+	border-radius: var(--scarf-radius-pill);
+	overflow: hidden;
+	border: 3px solid var(--scarf-color-surface);
+	box-shadow: var(--scarf-shadow-sm);
+}
+
+.um-header {
+	text-align: center;
+	padding-block-end: var(--scarf-space-6);
+	margin-block-end: var(--scarf-space-6);
+	border-block-end: 1px solid var(--scarf-color-border);
+}
+
+.um-name {
+	font-size: var(--scarf-font-xl);
+	font-weight: 700;
+	color: var(--scarf-color-text);
+	margin: var(--scarf-space-3) 0 0;
+}
+
+.um-account-side {
+	float: none;
+	width: auto;
+	margin: 0 0 var(--scarf-space-6);
+}
+
+.um-account-main {
+	float: none;
+	width: auto;
+}
+
+.um-account-tab h2 {
+	font-size: var(--scarf-font-lg);
+	font-weight: 700;
+	color: var(--scarf-color-text);
+	margin-block-end: var(--scarf-space-4);
+}
+
+.um-cover {
+	border-radius: var(--scarf-radius-lg) var(--scarf-radius-lg) 0 0;
+	overflow: hidden;
+}
+
+.um-modal {
+	border-radius: var(--scarf-radius-lg);
+	overflow: hidden;
+}
+
+.um-modal .um-modal-body {
+	padding: var(--scarf-space-6);
+}
+
+.um-members {
+	gap: var(--scarf-space-4);
+}
+
+.um-member {
+	border: 1px solid var(--scarf-color-border);
+	border-radius: var(--scarf-radius-lg);
+	overflow: hidden;
+	transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.um-member:hover {
+	border-color: var(--scarf-color-border-strong);
+	box-shadow: var(--scarf-shadow-sm);
+}
+
+.um-member-photo a.um-member-photo-img {
+	border-radius: var(--scarf-radius-pill);
+	overflow: hidden;
+}
+
+.um-member-card {
+	padding: var(--scarf-space-4);
+}
+
+.um-dropdown {
+	border-radius: var(--scarf-radius-md);
+	border: 1px solid var(--scarf-color-border);
+	box-shadow: var(--scarf-shadow-md);
+}
+
+@media ( max-width: 768px ) {
+	.um-form {
+		padding: var(--scarf-space-4);
+	}
+
+	.um-form input[type="text"],
+	.um-form input[type="tel"],
+	.um-form input[type="email"],
+	.um-form input[type="password"],
+	.um-form input[type="search"],
+	.um-form textarea,
+	.um-form select {
+		font-size: 16px;
+	}
+
+	.um-profile-nav-item a {
+		padding: var(--scarf-space-2) var(--scarf-space-4);
+		font-size: var(--scarf-font-xs);
+	}
+
+	.um-button {
+		width: 100%;
+		padding-inline: var(--scarf-space-4);
+	}
+}
+
+@media ( max-width: 480px ) {
+	.um-form {
+		padding: var(--scarf-space-3);
+	}
+}

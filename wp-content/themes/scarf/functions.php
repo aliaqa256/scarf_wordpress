@@ -15,6 +15,12 @@ function scarf_setup() {
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'custom-logo', array(
+		'height'      => 60,
+		'width'       => 200,
+		'flex-height' => true,
+		'flex-width'  => true,
+	) );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'html5', array(
 		'search-form',
@@ -27,7 +33,7 @@ function scarf_setup() {
 	) );
 
 	register_nav_menus( array(
-		'menu-primary' => esc_html__( 'Primary Menu', 'scarf' ),
+		'menu-primary' => esc_html__( 'منوی اصلی', 'scarf' ),
 	) );
 }
 add_action( 'after_setup_theme', 'scarf_setup' );
@@ -58,6 +64,16 @@ function scarf_enqueue_assets() {
 	wp_enqueue_script( 'scarf-main', SCARF_URI . '/assets/js/main.js', array(), SCARF_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'scarf_enqueue_assets' );
+
+if ( ! function_exists( 'scarf_enqueue_um_assets' ) ) {
+	function scarf_enqueue_um_assets() {
+		if ( ! function_exists( 'is_ultimatemember' ) || ! is_ultimatemember() ) {
+			return;
+		}
+		wp_enqueue_style( 'scarf-ultimate-member', SCARF_URI . '/assets/css/ultimate-member.css', array( 'scarf-main' ), SCARF_VERSION );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'scarf_enqueue_um_assets' );
 
 function scarf_get_account_url() {
 	if ( is_user_logged_in() ) {

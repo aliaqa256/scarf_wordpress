@@ -220,3 +220,58 @@ if ( ! function_exists( 'scarf_woocommerce_loop_add_to_cart_link' ) ) {
 		);
 	}
 }
+
+if ( ! function_exists( 'scarf_woocommerce_placeholder_img' ) ) {
+
+	add_filter( 'woocommerce_placeholder_img', 'scarf_woocommerce_placeholder_img', 10, 3 );
+
+	function scarf_woocommerce_placeholder_img( $image_html, $size, $dimensions ) {
+		$width  = isset( $dimensions['width'] ) ? $dimensions['width'] : 600;
+		$height = isset( $dimensions['height'] ) ? $dimensions['height'] : 600;
+
+		return scarf_placeholder_image( 'product', array(
+			'width'  => $width,
+			'height' => $height,
+		) );
+	}
+}
+
+if ( ! function_exists( 'scarf_no_products_found' ) ) {
+
+	remove_action( 'woocommerce_no_products_found', 'wc_no_products_found', 10 );
+	add_action( 'woocommerce_no_products_found', 'scarf_no_products_found', 10 );
+
+	function scarf_no_products_found() {
+		$shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
+		?>
+		<div class="scarf-empty-state">
+			<p><?php esc_html_e( 'محصولی با این فیلترها یافت نشد', 'scarf' ); ?></p>
+			<a class="scarf-button scarf-button--primary" href="<?php echo esc_url( $shop_url ); ?>">
+				<?php esc_html_e( 'حذف فیلترها', 'scarf' ); ?>
+			</a>
+		</div>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'scarf_woocommerce_shop_page_title' ) ) {
+
+	add_filter( 'woocommerce_page_title', 'scarf_woocommerce_shop_page_title' );
+
+	function scarf_woocommerce_shop_page_title( $page_title ) {
+		if ( is_shop() ) {
+			return esc_html__( 'فروشگاه', 'scarf' );
+		}
+		return $page_title;
+	}
+}
+
+if ( ! function_exists( 'scarf_woocommerce_breadcrumb_shop_text' ) ) {
+
+	add_filter( 'woocommerce_breadcrumb_defaults', 'scarf_woocommerce_breadcrumb_shop_text' );
+
+	function scarf_woocommerce_breadcrumb_shop_text( $defaults ) {
+		$defaults['home'] = esc_html__( 'خانه', 'scarf' );
+		return $defaults;
+	}
+}
