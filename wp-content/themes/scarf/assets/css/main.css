@@ -342,6 +342,10 @@ button {
 	line-height: 1;
 }
 
+.scarf-header__cart-count[style*="display:none"] {
+	display: none !important;
+}
+
 .scarf-header__nav {
 	border-block-start: 1px solid var(--scarf-color-border);
 	background: var(--scarf-color-surface-soft);

@@ -22,14 +22,18 @@
 				<?php endif; ?>
 			</div>
 
+			<?php if ( 'yes' === get_theme_mod( 'scarf_show_search', 'yes' ) ) : ?>
 			<div class="scarf-header__search">
 				<?php get_search_form(); ?>
 			</div>
+			<?php endif; ?>
 
 			<div class="scarf-header__actions">
+				<?php if ( 'yes' === get_theme_mod( 'scarf_show_account', 'yes' ) ) : ?>
 				<a class="scarf-header__account" href="<?php echo esc_url( scarf_get_account_url() ); ?>">
 					<?php esc_html_e( 'حساب کاربری', 'scarf' ); ?>
 				</a>
+				<?php endif; ?>
 
 				<?php if ( class_exists( 'WooCommerce' ) && function_exists( 'wc_get_cart_url' ) && function_exists( 'WC' ) ) : ?>
 					<a class="scarf-header__cart" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
@@ -39,10 +43,8 @@
 						if ( WC()->cart ) {
 							$cart_count = WC()->cart->get_cart_contents_count();
 						}
-						if ( $cart_count > 0 ) :
 						?>
-							<span class="scarf-header__cart-count"><?php echo esc_html( $cart_count ); ?></span>
-						<?php endif; ?>
+						<span class="scarf-header__cart-count"<?php echo $cart_count === 0 ? ' style="display:none"' : ''; ?>><?php echo esc_html( $cart_count ); ?></span>
 					</a>
 				<?php endif; ?>
 			</div>

@@ -9,6 +9,7 @@ define( 'SCARF_URI', get_template_directory_uri() );
 
 require_once SCARF_DIR . '/inc/template-helpers.php';
 require_once SCARF_DIR . '/inc/woocommerce.php';
+require_once SCARF_DIR . '/inc/customizer.php';
 
 function scarf_setup() {
 	load_theme_textdomain( 'scarf', SCARF_DIR . '/languages' );
@@ -115,3 +116,13 @@ function scarf_fallback_menu() {
 	}
 	echo '</ul>';
 }
+
+function scarf_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+	<span class="scarf-header__cart-count"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
+	<?php
+	$fragments['.scarf-header__cart-count'] = ob_get_clean();
+	return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'scarf_cart_fragment' );
