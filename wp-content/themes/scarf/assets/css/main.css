@@ -1077,3 +1077,39 @@ button {
 	color: var(--scarf-color-text-soft);
 }
 
+/* Widget areas */
+.widget {
+	margin-bottom: var(--scarf-space-4);
+}
+.widget-title {
+	font-weight: 700;
+	margin-bottom: var(--scarf-space-3);
+	color: var(--scarf-color-text);
+}
+.widget ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.widget ul li {
+	margin-bottom: var(--scarf-space-2);
+}
+.widget ul li a {
+	color: var(--scarf-color-text-soft);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+.widget ul li a:hover {
+	color: var(--scarf-color-primary);
+}
+.widget p {
+	color: var(--scarf-color-text-soft);
+	line-height: 1.6;
+}
+.scarf-homepage-widget {
+	max-width: var(--scarf-container-max);
+	margin-inline: auto;
+	padding-inline: var(--scarf-container-padding);
+	padding-block: var(--scarf-space-6);
+}
+

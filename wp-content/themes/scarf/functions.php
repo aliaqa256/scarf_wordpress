@@ -10,6 +10,7 @@ define( 'SCARF_URI', get_template_directory_uri() );
 require_once SCARF_DIR . '/inc/template-helpers.php';
 require_once SCARF_DIR . '/inc/woocommerce.php';
 require_once SCARF_DIR . '/inc/customizer.php';
+require_once SCARF_DIR . '/inc/block-patterns.php';
 
 function scarf_setup() {
 	load_theme_textdomain( 'scarf', SCARF_DIR . '/languages' );
@@ -126,3 +127,79 @@ function scarf_cart_fragment( $fragments ) {
 	return $fragments;
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'scarf_cart_fragment' );
+
+function scarf_widgets_init() {
+	// Footer columns (4)
+	register_sidebar( array(
+		'name'          => esc_html__( 'فوتر — ستون ۱', 'scarf' ),
+		'id'            => 'footer-col-1',
+		'description'   => esc_html__( 'ستون اول فوتر', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="scarf-footer__column-title widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'فوتر — ستون ۲', 'scarf' ),
+		'id'            => 'footer-col-2',
+		'description'   => esc_html__( 'ستون دوم فوتر', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="scarf-footer__column-title widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'فوتر — ستون ۳', 'scarf' ),
+		'id'            => 'footer-col-3',
+		'description'   => esc_html__( 'ستون سوم فوتر', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="scarf-footer__column-title widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'فوتر — ستون ۴', 'scarf' ),
+		'id'            => 'footer-col-4',
+		'description'   => esc_html__( 'ستون چهارم فوتر', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="scarf-footer__column-title widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Shop sidebar
+	register_sidebar( array(
+		'name'          => esc_html__( 'سایدبار فروشگاه', 'scarf' ),
+		'id'            => 'sidebar-shop',
+		'description'   => esc_html__( 'سایدبار صفحه آرشیو فروشگاه', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Homepage widget areas
+	register_sidebar( array(
+		'name'          => esc_html__( 'صفحه اصلی — بالای محصولات', 'scarf' ),
+		'id'            => 'homepage-top',
+		'description'   => esc_html__( 'بالای بخش محصولات صفحه اصلی', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s scarf-homepage-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title scarf-section-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'صفحه اصلی — پایین محصولات', 'scarf' ),
+		'id'            => 'homepage-bottom',
+		'description'   => esc_html__( 'پایین بخش محصولات صفحه اصلی', 'scarf' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s scarf-homepage-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title scarf-section-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'scarf_widgets_init' );
