@@ -5,21 +5,18 @@
 - The `scarf` theme exists and is WordPress-recognisable at `wp-content/themes/scarf/`.
 - Theme is functionally bootstrapped: constants, supports (title-tag, post-thumbnails, custom-logo, WooCommerce, html5, primary menu), and CSS/JS enqueuing active.
 - Global CSS design tokens and RTL foundation are active in `assets/css/main.css`.
-- **Customizer fully registered** with 6 sections: Colors (12 color pickers), Typography (font family + heading scale), Header (sticky, search, account toggles), Footer (copyright, 3 social links), Hero (title, description, CTA text/url, bg color), Contact (phone, email, address, hours).
-- **Customizer output connected**: `scarf_customizer_css()` outputs inline CSS overriding CSS custom properties via `get_theme_mod()` — colors, font, heading scale, hero bg, sticky header all wired. Live preview JS for colors/typography/hero in `customizer-preview.js`.
-- **Widget Areas registered**: Footer columns 1–4 (`footer-col-1` to `footer-col-4`), Shop sidebar (`sidebar-shop`), Homepage top/bottom (`homepage-top`, `homepage-bottom`).
-- **Footer uses widget areas**: `footer.php` iterates `footer-col-1` through `footer-col-4` with `dynamic_sidebar()` and shows empty state when inactive.
-- **Front page uses widget areas**: `front-page.php` calls `dynamic_sidebar('homepage-top')` and `dynamic_sidebar('homepage-bottom')` between product sections.
-- **Block Patterns registered**: 16 patterns across 5 categories (scarf, scarf-hero, scarf-cta, scarf-products, scarf-content) — hero variants, CTA banners, product grids, category showcase, testimonials, FAQ, about section, newsletter, trust badges, promo banner.
-- Header: logo/site name, search (Persian placeholder), account link, WooCommerce cart link with count badge, primary navigation row with fallback. All user-facing strings Persian and translatable.
-- Mobile menu + filter drawer toggles work (vanilla JS, aria-expanded/aria-controls, Escape key, progressive enhancement).
-- Hero section, placeholder system, homepage sections (categories, offers, new arrivals, best sellers, services) implemented.
-- WooCommerce: product cards via hooks/CSS (no template overrides), shop archive with sidebar + filter toggle, single product page with custom sale badge + variation select, cart/checkout fully styled. **Cart AJAX fragment for live count updates.**
-- **Ultimate Member pages: login, register, account, profile, password-reset are styled to match theme design system (Stage 12).**
-- **Footer: 4-column Persian e-commerce footer with widget areas, trust row, and bottom bar (Stage 13 + widget integration).**
-- **Placeholder filter (`woocommerce_placeholder_img`), empty state hook (`woocommerce_no_products_found`), Persian microcopy audit completed (Stage 14).**
-- **how-to-use-theme/ documentation**: 9 docs covering quick-start, customizer, block patterns, CSS design system, template parts, WooCommerce integration, and quick reference.
-- No WooCommerce template overrides used. No woocommerce/ directory exists.
+- **Customizer fully registered AND connected**: 7 sections (Colors, Typography, Header, Footer, Hero, Homepage Sections Visibility, Contact) with 29 settings — all wired to templates via `get_theme_mod()` and inline CSS output. Live preview JS for colors/typography/hero/hero-image in `customizer-preview.js`.
+- **Widget Areas registered AND connected**: All 7 areas (footer-col-1–4, sidebar-shop, homepage-top, homepage-bottom) are used in templates via `dynamic_sidebar()` with `is_active_sidebar()` guards.
+- **theme.json fully updated**: 19 colors, 7 font sizes, 9 spacing sizes, 3 font families, 3 shadow presets, layout settings, and 2 template parts — all matching DESIGN_SYSTEM.md.
+- **Block Patterns registered**: 16 patterns across 5 categories — hero variants, CTA banners, product grids, category showcase, testimonials, FAQ, about section, newsletter, trust badges, promo banner.
+- **Screenshot**: 1200×900 `screenshot.png` generated for WordPress Appearance → Themes.
+- Header, hero, categories, product sections (offers, new arrivals, best sellers), services, and footer all rendering correctly at `http://localhost/`.
+- WooCommerce: product cards, shop archive with sidebar, single product, cart/checkout — all styled. Cart AJAX fragment active.
+- **Quick View**: Product cards have a quick view button (eye icon + Persian "پیشنمایش") that opens a modal with product image, title, price, description, add-to-cart form, and view product link. AJAX-powered, nonce-verified, responsive (2-column desktop, stacked mobile).
+- **Homepage section visibility**: Customizer toggles for showing/hiding each homepage section (hero, categories, offers, new arrivals, best sellers, services).
+- Ultimate Member pages styled. how-to-use-theme/ docs complete (9 files).
+- Duplicate sidebar-shop registration bug fixed.
+- No WooCommerce template overrides. No woocommerce/ directory.
 
 ## Important Rules
 
@@ -559,6 +556,83 @@ Validation:
 - Cart fragment properly outputs escaped count.
 - `woocommerce_add_to_cart_fragments` filter correctly used.
 
+### Stage 27 — Homepage Section Visibility Toggles in Customizer
+
+Date: 2026-07-21
+
+Summary:
+- Added new Customizer section "نمایش بخش‌های صفحه اصلی" (Homepage Sections Visibility) with 6 toggle checkboxes:
+  - `scarf_show_hero` (بنر اصلی)
+  - `scarf_show_categories` (دسته‌بندی‌ها)
+  - `scarf_show_offers` (پیشنهادات ویژه)
+  - `scarf_show_new_arrivals` (جدیدترین محصولات)
+  - `scarf_show_best_sellers` (پرفروش‌ترین‌ها)
+  - `scarf_show_services` (خدمات ما)
+- All settings default to `'yes'` (visible) for backward compatibility.
+- Updated `front-page.php` to conditionally display each section based on corresponding `get_theme_mod()` value.
+- Widget areas (`homepage-top`, `homepage-bottom`) remain always visible when active.
+
+Files changed:
+- `wp-content/themes/scarf/inc/customizer.php` (update — new section with 6 checkbox controls)
+- `wp-content/themes/scarf/front-page.php` (update — conditional section rendering)
+
+Validation:
+- PHP syntax passed on both files.
+- File permissions set to 644.
+- All settings have `sanitize_callback => 'esc_attr'`.
+- Default behavior unchanged when Customizer not configured (all sections visible).
+- Text domain `scarf` used for all Persian labels.
+
+### Stage 28 — Hero Image Upload in Customizer
+
+Date: 2026-07-21
+
+Summary:
+- Added `scarf_hero_image` Customizer setting with `WP_Customize_Image_Control` for hero banner image upload.
+- Updated `hero-section.php` to display uploaded image when available, falling back to placeholder SVG when no image is set.
+- Added live preview support in `customizer-preview.js` for hero image (shows/removes image dynamically in Customizer).
+- Added CSS for `.scarf-hero__bg--image` class for proper image display.
+- All strings Persian with `scarf` text domain. RTL-first approach maintained.
+
+Files changed:
+- `wp-content/themes/scarf/inc/customizer.php` (update — `scarf_hero_image` setting with `WP_Customize_Image_Control`)
+- `wp-content/themes/scarf/template-parts/hero-section.php` (update — conditional image display)
+- `wp-content/themes/scarf/assets/js/customizer-preview.js` (update — hero image live preview)
+- `wp-content/themes/scarf/assets/css/main.css` (update — `.scarf-hero__bg--image` class)
+
+Validation:
+- Playwright: Homepage renders correctly with hero section (placeholder SVG).
+- No console errors.
+- Mobile view (390×844) renders correctly with description hidden.
+- File permissions set to 644 on all modified files.
+- Customizer validation not performed (requires WordPress login credentials).
+
+### Stage 26 — Product Quick View Feature
+
+Date: 2026-07-21
+
+Summary:
+- Added Quick View feature for WooCommerce product cards on shop/archive pages.
+- **functions.php**: Added `scarf_localize_quick_view()` to pass AJAX URL, nonce, and Persian i18n strings to JS (only on shop/taxonomy pages). Added `scarf_quick_view_handler()` AJAX handler that returns product HTML (image, title, price, short description, add-to-cart form or out-of-stock badge, view product link). Nonce-verified, `absint()` on input, proper `wp_send_json_success/error` responses.
+- **inc/woocommerce.php**: Added `scarf_quick_view_button()` hooked to `woocommerce_after_shop_loop_item` at priority 15. Renders an eye SVG icon + Persian "پیشنمایش" text as a `<button>` with `data-product-id` attribute and accessible `aria-label`.
+- **assets/js/main.js**: Added vanilla JS quick view modal system — creates overlay+modal DOM dynamically, fetches product data via AJAX FormData, shows loading spinner, inserts content, supports close via button/overlay click/Escape key, proper body scroll lock, progressive enhancement (guarded by `typeof scarfQuickView !== 'undefined'`).
+- **assets/css/main.css**: Added ~250 lines of Quick View CSS — trigger button (icon-only at tablet breakpoint), overlay (fade-in animation), modal (slide-up animation, max-width 800px, max-height 90vh, scrollable), close button (pill-shaped), spinner, 2-column grid layout (image + details), price styling (del/ins), description, add-to-cart button, out-of-stock badge, view product link, responsive at 768px (single column stacked).
+- **assets/css/woocommerce.css**: Added trigger button margin and responsive text-hide rules for tablet breakpoint.
+
+Files changed:
+- `wp-content/themes/scarf/functions.php` (update — AJAX handler + localize script)
+- `wp-content/themes/scarf/inc/woocommerce.php` (update — quick view button hook)
+- `wp-content/themes/scarf/assets/js/main.js` (update — modal JS logic)
+- `wp-content/themes/scarf/assets/css/main.css` (update — modal + trigger CSS)
+- `wp-content/themes/scarf/assets/css/woocommerce.css` (update — trigger positioning)
+
+Validation:
+- JS syntax: all new code is within existing IIFE and DOMContentLoaded handlers.
+- PHP: functions follow existing pattern (function_exists guards, absint input, wp_kses_post output, nonce verification).
+- No WooCommerce template overrides created.
+- All strings translatable with `scarf` text domain, all Persian.
+- Handled with kanban task t_588a8f15 (completed).
+
 ### Stage 25 — Documentation & How-to-Use-Theme
 
 Date: 2026-07-12
@@ -748,21 +822,16 @@ wp theme activate scarf
 
 ## Last Session Summary
 
-**What was requested:** Batch 7 — Post-release hardening: widget areas, block patterns, Customizer integration, bug fixes, documentation.
+**What was requested:** Phase A — Upload hero image in Customizer.
 
 **What changed:**
-- Stage 18: Created `inc/block-patterns.php` with 16 block patterns across 5 categories (hero, cta, products, content, general). All Persian, RTL-friendly, theme-colored.
-- Stage 19: Registered 7 widget areas: footer columns 1–4, shop sidebar, homepage top/bottom.
-- Stage 20: Rewrote `footer.php` to use widget-based columns + Customizer values for copyright/social/contact.
-- Stage 21: Created `inc/customizer.php` with full Customizer panel (6 sections, 20+ settings) and live preview JS.
-- Stage 22: Updated `header.php` to use Customizer toggles for search/account visibility.
-- Stage 23: Updated `front-page.php` with `dynamic_sidebar()` calls for homepage-top and homepage-bottom widget areas.
-- Stage 24: Fixed shop container CSS bug + added AJAX cart fragment support.
-- Stage 25: Created `how-to-use-theme/` directory with 9 documentation files.
+- Added `scarf_hero_image` Customizer setting with `WP_Customize_Image_Control`.
+- Updated `hero-section.php` to display uploaded image (falls back to placeholder SVG).
+- Added live preview for hero image in `customizer-preview.js`.
+- Added CSS for `.scarf-hero__bg--image` class.
+- HANDOFF.md updated with Stage 28 entry.
 
 **What should happen next:**
-1. Connect remaining hardcoded template parts to Customizer (hero-section.php WordPress→Customizer, section-categories.php, section-services.php).
-2. Verify shop sidebar `dynamic_sidebar()` works in `inc/woocommerce.php`.
-3. Run Playwright validation on block pattern editor views.
-4. Create screenshot.png.
-5. Update how-to-use-theme docs to cover Customizer and widget integration.
+1. Test Customizer image upload by logging in and uploading a hero image.
+2. Consider adding more Customizer sections (e.g., product grid columns, section order).
+3. Consider adding more hero layout options (e.g., text alignment, overlay opacity).

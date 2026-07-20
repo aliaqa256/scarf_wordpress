@@ -35,7 +35,15 @@ function scarf_customize_register( $wp_customize ) {
 		'scarf_color_background'     => array( 'label' => 'رنگ پس‌زمینه',        'default' => '#f6f7f9' ),
 		'scarf_color_surface'        => array( 'label' => 'رنگ سطح',             'default' => '#ffffff' ),
 		'scarf_color_border'         => array( 'label' => 'رنگ حاشیه',           'default' => '#e6e8ec' ),
+		'scarf_color_accent_soft'    => array( 'label' => 'رنگ لهجه (نرم)',      'default' => '#f9eef0' ),
+		'scarf_color_muted'          => array( 'label' => 'رنگ کمرنگ',           'default' => '#8a929f' ),
+		'scarf_color_success'        => array( 'label' => 'رنگ موفقیت',          'default' => '#0f9f6e' ),
+		'scarf_color_warning'        => array( 'label' => 'رنگ هشدار',           'default' => '#f59e0b' ),
+		'scarf_color_danger'         => array( 'label' => 'رنگ خطا',             'default' => '#d32f2f' ),
 		'scarf_color_discount'       => array( 'label' => 'رنگ تخفیف',           'default' => '#d83f5f' ),
+		'scarf_color_price'          => array( 'label' => 'رنگ قیمت',            'default' => '#232933' ),
+		'scarf_color_border_strong'  => array( 'label' => 'رنگ حاشیه قوی',       'default' => '#d4d8df' ),
+		'scarf_color_surface_soft'   => array( 'label' => 'رنگ سطح نرم',         'default' => '#fafafa' ),
 	);
 
 	foreach ( $scarf_colors as $id => $args ) {
@@ -168,6 +176,18 @@ function scarf_customize_register( $wp_customize ) {
 		'panel' => 'scarf_panel',
 	) );
 
+	// Hero image upload.
+	$wp_customize->add_setting( 'scarf_hero_image', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+		'transport'         => 'postMessage',
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'scarf_hero_image', array(
+		'label'       => esc_html__( 'تصویر بنر', 'scarf' ),
+		'description' => esc_html__( 'تصویر پس‌زمینه بنر اصلی. اگر تصویری آپلود نشود، از گرادیانت پیش‌فرض استفاده می‌شود.', 'scarf' ),
+		'section'     => 'scarf_hero_settings',
+	) ) );
+
 	$hero_fields = array(
 		'scarf_hero_title'       => array( 'label' => 'عنوان بنر',    'default' => 'جدیدترین شال و روسری‌ها',    'type' => 'text' ),
 		'scarf_hero_description' => array( 'label' => 'توضیحات بنر',  'default' => 'مجموعه‌ای از بهترین و شیک‌ترین شال و روسری‌های بازار با کیفیت عالی و قیمت مناسب', 'type' => 'textarea' ),
@@ -187,6 +207,34 @@ function scarf_customize_register( $wp_customize ) {
 			'label'   => esc_html( $args['label'] ),
 			'section' => 'scarf_hero_settings',
 			'type'    => $args['type'],
+		) );
+	}
+
+	// ── Section: Homepage Sections Visibility ──
+	$wp_customize->add_section( 'scarf_homepage_sections', array(
+		'title'    => esc_html__( 'نمایش بخش‌های صفحه اصلی', 'scarf' ),
+		'panel'    => 'scarf_panel',
+		'priority' => 25,
+	) );
+
+	$homepage_sections = array(
+		'scarf_show_hero'        => esc_html__( 'بنر اصلی', 'scarf' ),
+		'scarf_show_categories'  => esc_html__( 'دسته‌بندی‌ها', 'scarf' ),
+		'scarf_show_offers'      => esc_html__( 'پیشنهادات ویژه', 'scarf' ),
+		'scarf_show_new_arrivals' => esc_html__( 'جدیدترین محصولات', 'scarf' ),
+		'scarf_show_best_sellers' => esc_html__( 'پرفروش‌ترین‌ها', 'scarf' ),
+		'scarf_show_services'    => esc_html__( 'خدمات ما', 'scarf' ),
+	);
+
+	foreach ( $homepage_sections as $id => $label ) {
+		$wp_customize->add_setting( $id, array(
+			'default'           => 'yes',
+			'sanitize_callback' => 'esc_attr',
+		) );
+		$wp_customize->add_control( $id, array(
+			'label'   => $label,
+			'section' => 'scarf_homepage_sections',
+			'type'    => 'checkbox',
 		) );
 	}
 
@@ -232,7 +280,15 @@ function scarf_customizer_css() {
 	$background     = get_theme_mod( 'scarf_color_background', '#f6f7f9' );
 	$surface        = get_theme_mod( 'scarf_color_surface', '#ffffff' );
 	$border         = get_theme_mod( 'scarf_color_border', '#e6e8ec' );
+	$accent_soft    = get_theme_mod( 'scarf_color_accent_soft', '#f9eef0' );
+	$muted          = get_theme_mod( 'scarf_color_muted', '#8a929f' );
+	$success        = get_theme_mod( 'scarf_color_success', '#0f9f6e' );
+	$warning        = get_theme_mod( 'scarf_color_warning', '#f59e0b' );
+	$danger         = get_theme_mod( 'scarf_color_danger', '#d32f2f' );
 	$discount       = get_theme_mod( 'scarf_color_discount', '#d83f5f' );
+	$price          = get_theme_mod( 'scarf_color_price', '#232933' );
+	$border_strong  = get_theme_mod( 'scarf_color_border_strong', '#d4d8df' );
+	$surface_soft   = get_theme_mod( 'scarf_color_surface_soft', '#fafafa' );
 
 	$font_family   = get_theme_mod( 'scarf_font_family', 'Vazirmatn, IRANSans, Tahoma, Arial, sans-serif' );
 	$heading_scale = floatval( get_theme_mod( 'scarf_heading_scale', '1' ) );
@@ -252,7 +308,15 @@ function scarf_customizer_css() {
 	$css .= '--scarf-color-background:' . esc_attr( $background ) . ';';
 	$css .= '--scarf-color-surface:' . esc_attr( $surface ) . ';';
 	$css .= '--scarf-color-border:' . esc_attr( $border ) . ';';
+	$css .= '--scarf-color-accent-soft:' . esc_attr( $accent_soft ) . ';';
+	$css .= '--scarf-color-muted:' . esc_attr( $muted ) . ';';
+	$css .= '--scarf-color-success:' . esc_attr( $success ) . ';';
+	$css .= '--scarf-color-warning:' . esc_attr( $warning ) . ';';
+	$css .= '--scarf-color-danger:' . esc_attr( $danger ) . ';';
 	$css .= '--scarf-color-discount:' . esc_attr( $discount ) . ';';
+	$css .= '--scarf-color-price:' . esc_attr( $price ) . ';';
+	$css .= '--scarf-color-border-strong:' . esc_attr( $border_strong ) . ';';
+	$css .= '--scarf-color-surface-soft:' . esc_attr( $surface_soft ) . ';';
 	$css .= '--scarf-font-family:' . esc_attr( $font_family ) . ';';
 	$css .= '--scarf-font-2xl:' . ( 1.75 * $heading_scale ) . 'rem;';
 	$css .= '--scarf-font-xl:' . ( 1.375 * $heading_scale ) . 'rem;';

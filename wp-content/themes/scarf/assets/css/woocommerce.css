@@ -124,6 +124,54 @@
 	inset-inline-end: var(--scarf-space-2);
 }
 
+/* ── Badge: New ── */
+.scarf-badge--new {
+	background-color: var(--scarf-color-secondary);
+	color: #fff;
+	top: var(--scarf-space-2);
+	inset-inline-end: var(--scarf-space-2);
+}
+
+/* ── Badge: Success ── */
+.scarf-badge--success {
+	background-color: var(--scarf-color-success);
+	color: #fff;
+	top: var(--scarf-space-2);
+	inset-inline-end: var(--scarf-space-2);
+}
+
+/* ── Badge: Warning ── */
+.scarf-badge--warning {
+	background-color: var(--scarf-color-warning);
+	color: #fff;
+	top: var(--scarf-space-2);
+	inset-inline-end: var(--scarf-space-2);
+}
+
+/* ── Badge: Info ── */
+.scarf-badge--info {
+	background-color: var(--scarf-color-info);
+	color: #fff;
+	top: var(--scarf-space-2);
+	inset-inline-end: var(--scarf-space-2);
+}
+
+/* ── Quick View trigger inside product card ─────────────────── */
+.scarf-qv__trigger {
+	margin: 0 var(--scarf-space-3) var(--scarf-space-3);
+}
+
+@media ( max-width: 1024px ) {
+
+	.scarf-qv__trigger-text {
+		display: none;
+	}
+
+	.scarf-qv__trigger {
+		padding: var(--scarf-space-2);
+	}
+}
+
 .woocommerce ul.products li.product .star-rating {
 	margin: var(--scarf-space-1) var(--scarf-space-3);
 	font-size: var(--scarf-font-xs);

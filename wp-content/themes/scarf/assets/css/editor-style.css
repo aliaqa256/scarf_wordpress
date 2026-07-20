@@ -1,0 +1,210 @@
+/**
+ * Scarf Theme — Block Editor Styles
+ *
+ * Mirrors front-end design tokens so Gutenberg content
+ * visually matches the published output.
+ */
+
+/* ── Design Tokens ──────────────────────────────────────── */
+
+:root {
+	--scarf-color-primary: #d83f5f;
+	--scarf-color-primary-hover: #c93452;
+	--scarf-color-primary-soft: #fff1f4;
+
+	--scarf-color-secondary: #19bfd3;
+	--scarf-color-secondary-soft: #e9fbfd;
+
+	--scarf-color-accent: #b76e79;
+	--scarf-color-accent-soft: #f9eef0;
+
+	--scarf-color-success: #0f9f6e;
+	--scarf-color-warning: #f59e0b;
+	--scarf-color-danger: #d32f2f;
+
+	--scarf-color-text: #232933;
+	--scarf-color-text-soft: #5f6773;
+	--scarf-color-muted: #8a929f;
+
+	--scarf-color-border: #e6e8ec;
+	--scarf-color-border-strong: #d4d8df;
+
+	--scarf-color-background: #f6f7f9;
+	--scarf-color-surface: #ffffff;
+	--scarf-color-surface-soft: #fafafa;
+
+	--scarf-color-price: #232933;
+	--scarf-color-discount: #d83f5f;
+
+	--scarf-font-family: Vazirmatn, IRANSans, Tahoma, Arial, sans-serif;
+
+	--scarf-font-xs: 0.75rem;
+	--scarf-font-sm: 0.8125rem;
+	--scarf-font-md: 0.875rem;
+	--scarf-font-base: 1rem;
+	--scarf-font-lg: 1.125rem;
+	--scarf-font-xl: 1.375rem;
+	--scarf-font-2xl: 1.75rem;
+
+	--scarf-space-1: 0.25rem;
+	--scarf-space-2: 0.5rem;
+	--scarf-space-3: 0.75rem;
+	--scarf-space-4: 1rem;
+	--scarf-space-5: 1.25rem;
+	--scarf-space-6: 1.5rem;
+	--scarf-space-8: 2rem;
+	--scarf-space-10: 2.5rem;
+	--scarf-space-12: 3rem;
+
+	--scarf-radius-xs: 0.25rem;
+	--scarf-radius-sm: 0.5rem;
+	--scarf-radius-md: 0.75rem;
+	--scarf-radius-lg: 1rem;
+	--scarf-radius-xl: 1.25rem;
+	--scarf-radius-pill: 999px;
+
+	--scarf-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+	--scarf-shadow-md: 0 8px 20px rgba(15, 23, 42, 0.08);
+	--scarf-shadow-lg: 0 16px 32px rgba(15, 23, 42, 0.10);
+
+	--scarf-container-max: 1440px;
+	--scarf-container-padding: 1rem;
+}
+
+/* ── Editor Base ────────────────────────────────────────── */
+
+.editor-styles-wrapper {
+	font-family: var(--scarf-font-family);
+	color: var(--scarf-color-text);
+	line-height: 1.7;
+	font-size: var(--scarf-font-base);
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	color: var(--scarf-color-text);
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.editor-styles-wrapper h1 {
+	font-size: var(--scarf-font-2xl);
+}
+
+.editor-styles-wrapper h2 {
+	font-size: var(--scarf-font-xl);
+}
+
+.editor-styles-wrapper h3 {
+	font-size: var(--scarf-font-lg);
+}
+
+.editor-styles-wrapper a {
+	color: var(--scarf-color-primary);
+	text-decoration: underline;
+}
+
+.editor-styles-wrapper a:hover {
+	color: var(--scarf-color-primary-hover);
+}
+
+/* ── Buttons in editor ──────────────────────────────────── */
+
+.editor-styles-wrapper .wp-block-button__link {
+	font-family: var(--scarf-font-family);
+	border-radius: var(--scarf-radius-md);
+	padding: var(--scarf-space-3) var(--scarf-space-6);
+	font-size: var(--scarf-font-sm);
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.editor-styles-wrapper .is-style-primary .wp-block-button__link,
+.editor-styles-wrapper .wp-block-button__link {
+	background-color: var(--scarf-color-primary);
+	color: #fff;
+}
+
+/* ── Images ─────────────────────────────────────────────── */
+
+.editor-styles-wrapper img {
+	border-radius: var(--scarf-radius-md);
+}
+
+/* ── Quotes ─────────────────────────────────────────────── */
+
+.editor-styles-wrapper blockquote {
+	border-inline-start: 4px solid var(--scarf-color-primary-soft);
+	padding-inline-start: var(--scarf-space-4);
+	color: var(--scarf-color-text-soft);
+	font-style: italic;
+}
+
+/* ── Lists ──────────────────────────────────────────────── */
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+	padding-inline-start: var(--scarf-space-6);
+}
+
+/* ── Separator ──────────────────────────────────────────── */
+
+.editor-styles-wrapper hr {
+	border: none;
+	border-top: 1px solid var(--scarf-color-border);
+	margin-block: var(--scarf-space-8);
+}
+
+/* ── Code ───────────────────────────────────────────────── */
+
+.editor-styles-wrapper code {
+	background-color: var(--scarf-color-surface-soft);
+	border: 1px solid var(--scarf-color-border);
+	border-radius: var(--scarf-radius-sm);
+	padding: 0.125em 0.375em;
+	font-size: 0.875em;
+}
+
+.editor-styles-wrapper pre {
+	background-color: var(--scarf-color-text);
+	color: var(--scarf-color-surface);
+	border-radius: var(--scarf-radius-md);
+	padding: var(--scarf-space-4);
+	overflow-x: auto;
+}
+
+.editor-styles-wrapper pre code {
+	background: none;
+	border: none;
+	padding: 0;
+	color: inherit;
+}
+
+/* ── Tables ─────────────────────────────────────────────── */
+
+.editor-styles-wrapper table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper td {
+	border: 1px solid var(--scarf-color-border);
+	padding: var(--scarf-space-2) var(--scarf-space-3);
+	text-align: start;
+}
+
+.editor-styles-wrapper th {
+	background-color: var(--scarf-color-surface-soft);
+	font-weight: 600;
+}
+
+/* ── WooCommerce blocks in editor ────────────────────────── */
+
+.editor-styles-wrapper .wc-block-grid {
+	font-family: var(--scarf-font-family);
+}

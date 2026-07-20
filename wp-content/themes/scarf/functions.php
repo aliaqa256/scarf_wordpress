@@ -37,6 +37,8 @@ function scarf_setup() {
 	register_nav_menus( array(
 		'menu-primary' => esc_html__( 'منوی اصلی', 'scarf' ),
 	) );
+
+	add_editor_style( 'assets/css/editor-style.css' );
 }
 add_action( 'after_setup_theme', 'scarf_setup' );
 
@@ -63,6 +65,91 @@ if ( ! function_exists( 'scarf_enqueue_um_assets' ) ) {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'scarf_enqueue_um_assets' );
+
+/* ── Quick View: localized data for AJAX ──────────────────────── */
+function scarf_localize_quick_view() {
+if ( ! is_shop() && ! is_product_taxonomy() ) {
+	return;
+}
+wp_localize_script( 'scarf-main', 'scarfQuickView', array(
+	'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+	'nonce'   => wp_create_nonce( 'scarf_quick_view_nonce' ),
+	'i18n'    => array(
+		'addToCart' => esc_html__( 'افزودن به سبد خرید', 'scarf' ),
+		'loading'   => esc_html__( 'در حال بارگذاری...', 'scarf' ),
+		'close'     => esc_html__( 'بستن', 'scarf' ),
+		'viewProduct' => esc_html__( 'مشاهده محصول', 'scarf' ),
+	),
+) );
+}
+add_action( 'wp_enqueue_scripts', 'scarf_localize_quick_view' );
+
+/* ── Quick View: AJAX handler ─────────────────────────────────── */
+function scarf_quick_view_handler() {
+check_ajax_referer( 'scarf_quick_view_nonce', 'nonce' );
+
+$product_id = isset( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : 0;
+
+if ( ! $product_id ) {
+	wp_send_json_error();
+}
+
+$product = wc_get_product( $product_id );
+if ( ! $product ) {
+	wp_send_json_error();
+}
+
+ob_start();
+?>
+<div class="scarf-qv">
+	<div class="scarf-qv__image">
+		<?php
+		$image_id  = $product->get_image_id();
+		$image_url = wp_get_attachment_image_url( $image_id, 'woocommerce_large_image' );
+		$alt       = $product->get_name();
+		?>
+		<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" />
+	</div>
+	<div class="scarf-qv__details">
+		<h2 class="scarf-qv__title"><?php echo esc_html( $product->get_name() ); ?></h2>
+
+		<div class="scarf-qv__price">
+			<?php echo wp_kses_post( $product->get_price_html() ); ?>
+		</div>
+
+		<?php if ( $product->get_short_description() ) : ?>
+			<div class="scarf-qv__description">
+				<?php echo wp_kses_post( $product->get_short_description() ); ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $product->is_in_stock() ) : ?>
+			<form class="scarf-qv__cart-form cart" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+				<?php wp_nonce_field( 'woocommerce-add-to-cart', 'add-to-cart-nonce' ); ?>
+				<input type="hidden" name="product_id" value="<?php echo esc_attr( $product_id ); ?>" />
+				<input type="hidden" name="quantity" value="1" />
+				<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product_id ); ?>" class="scarf-qv__add-to-cart button alt">
+					<?php echo esc_html__( 'افزودن به سبد خرید', 'scarf' ); ?>
+				</button>
+			</form>
+		<?php else : ?>
+			<span class="scarf-qv__out-of-stock scarf-badge scarf-badge--danger">
+				<?php echo esc_html__( 'ناموجود', 'scarf' ); ?>
+			</span>
+		<?php endif; ?>
+
+		<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="scarf-qv__view-link">
+			<?php echo esc_html__( 'مشاهده محصول', 'scarf' ); ?>
+		</a>
+	</div>
+</div>
+<?php
+$html = ob_get_clean();
+
+wp_send_json_success( array( 'html' => $html ) );
+}
+add_action( 'wp_ajax_scarf_quick_view', 'scarf_quick_view_handler' );
+add_action( 'wp_ajax_nopriv_scarf_quick_view', 'scarf_quick_view_handler' );
 
 function scarf_get_account_url() {
 	if ( is_user_logged_in() ) {

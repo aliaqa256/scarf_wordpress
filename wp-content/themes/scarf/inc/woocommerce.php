@@ -159,6 +159,34 @@ if ( ! function_exists( 'scarf_woocommerce_stock_badge' ) ) {
 	}
 }
 
+if ( ! function_exists( 'scarf_quick_view_button' ) ) {
+
+	add_action( 'woocommerce_after_shop_loop_item', 'scarf_quick_view_button', 15 );
+
+	function scarf_quick_view_button() {
+		global $product;
+
+		if ( ! is_a( $product, 'WC_Product' ) ) {
+			return;
+		}
+
+		$product_id = $product->get_id();
+		?>
+		<button type="button"
+			class="scarf-qv__trigger"
+			data-product-id="<?php echo esc_attr( $product_id ); ?>"
+			aria-label="<?php echo esc_attr( sprintf(
+				/* translators: %s: product name */
+				__( 'پیشنمایش %s', 'scarf' ),
+				$product->get_name()
+			) ); ?>">
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+			<span class="scarf-qv__trigger-text"><?php echo esc_html__( 'پیشنمایش', 'scarf' ); ?></span>
+		</button>
+		<?php
+	}
+}
+
 if ( ! function_exists( 'scarf_woocommerce_shop_sidebar' ) ) {
 
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
@@ -273,5 +301,98 @@ if ( ! function_exists( 'scarf_woocommerce_breadcrumb_shop_text' ) ) {
 	function scarf_woocommerce_breadcrumb_shop_text( $defaults ) {
 		$defaults['home'] = esc_html__( 'خانه', 'scarf' );
 		return $defaults;
+	}
+}
+
+/**
+ * Badge variant: New — shows "جدید" for products published in the last 7 days.
+ */
+if ( ! function_exists( 'scarf_woocommerce_new_badge' ) ) {
+
+	add_action( 'woocommerce_before_shop_loop_item_title', 'scarf_woocommerce_new_badge', 8 );
+
+	function scarf_woocommerce_new_badge() {
+		global $product;
+
+		if ( ! is_a( $product, 'WC_Product' ) ) {
+			return;
+		}
+
+		$date_created = $product->get_date_created();
+
+		if ( ! $date_created instanceof WC_DateTime ) {
+			return;
+		}
+
+		$now  = current_time( 'timestamp' );
+		$diff = $now - $date_created->getTimestamp();
+
+		if ( $diff <= 7 * DAY_IN_SECONDS ) {
+			echo '<span class="scarf-badge scarf-badge--new">' . esc_html__( 'جدید', 'scarf' ) . '</span>';
+		}
+	}
+}
+
+/**
+ * Badge variant: Success — shows "موجود" for in-stock products that are on sale.
+ */
+if ( ! function_exists( 'scarf_woocommerce_success_badge' ) ) {
+
+	add_action( 'woocommerce_before_shop_loop_item_title', 'scarf_woocommerce_success_badge', 9 );
+
+	function scarf_woocommerce_success_badge() {
+		global $product;
+
+		if ( ! is_a( $product, 'WC_Product' ) ) {
+			return;
+		}
+
+		if ( $product->is_on_sale() && $product->is_in_stock() ) {
+			echo '<span class="scarf-badge scarf-badge--success">' . esc_html__( 'پیشنهاد ویژه', 'scarf' ) . '</span>';
+		}
+	}
+}
+
+/**
+ * Badge variant: Warning — shows "موجودی محدود" for low-stock products.
+ */
+if ( ! function_exists( 'scarf_woocommerce_warning_badge' ) ) {
+
+	add_action( 'woocommerce_before_shop_loop_item_title', 'scarf_woocommerce_warning_badge', 7 );
+
+	function scarf_woocommerce_warning_badge() {
+		global $product;
+
+		if ( ! is_a( $product, 'WC_Product' ) ) {
+			return;
+		}
+
+		$stock_quantity = $product->get_stock_quantity();
+
+		if ( null !== $stock_quantity && $stock_quantity > 0 && $stock_quantity <= 5 ) {
+			echo '<span class="scarf-badge scarf-badge--warning">' . esc_html__( 'موجودی محدود', 'scarf' ) . '</span>';
+		}
+	}
+}
+
+/**
+ * Badge variant: Info — shows "پرفروش" for products with sales rank in top sellers.
+ */
+if ( ! function_exists( 'scarf_woocommerce_info_badge' ) ) {
+
+	add_action( 'woocommerce_before_shop_loop_item_title', 'scarf_woocommerce_info_badge', 6 );
+
+	function scarf_woocommerce_info_badge() {
+		global $product;
+
+		if ( ! is_a( $product, 'WC_Product' ) ) {
+			return;
+		}
+
+		$total_sales = (float) $product->get_total_sales();
+
+		if ( $total_sales >= 10 ) {
+			echo '<span class="scarf-badge scarf-badge--info">' . esc_html__( 'پرفروش', 'scarf' ) . '</span>';
+		}
 	}
 }
