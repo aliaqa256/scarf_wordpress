@@ -40,20 +40,7 @@ function scarf_setup() {
 }
 add_action( 'after_setup_theme', 'scarf_setup' );
 
-if ( ! function_exists( 'scarf_register_sidebars' ) ) {
-	function scarf_register_sidebars() {
-		register_sidebar( array(
-			'name'          => esc_html__( 'فیلتر فروشگاه', 'scarf' ),
-			'id'            => 'sidebar-shop',
-			'description'   => esc_html__( 'ویجت‌های فیلتر و ناوبری فروشگاه', 'scarf' ),
-			'before_widget' => '<div id="%1$s" class="scarf-widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="scarf-widget__title">',
-			'after_title'   => '</h3>',
-		) );
-	}
-}
-add_action( 'widgets_init', 'scarf_register_sidebars' );
+/* scarf_register_sidebars removed — sidebar-shop is registered in scarf_widgets_init(). */
 
 function scarf_enqueue_assets() {
 	wp_enqueue_style( 'scarf-style', get_stylesheet_uri(), array(), SCARF_VERSION );

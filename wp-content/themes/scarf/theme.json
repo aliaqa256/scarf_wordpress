@@ -10,19 +10,79 @@
 				{ "slug": "secondary", "color": "#19bfd3", "name": "Secondary" },
 				{ "slug": "secondary-soft", "color": "#e9fbfd", "name": "Secondary Soft" },
 				{ "slug": "accent", "color": "#b76e79", "name": "Accent" },
+				{ "slug": "accent-soft", "color": "#f9eef0", "name": "Accent Soft" },
+				{ "slug": "success", "color": "#0f9f6e", "name": "Success" },
+				{ "slug": "warning", "color": "#f59e0b", "name": "Warning" },
+				{ "slug": "danger", "color": "#d32f2f", "name": "Danger" },
 				{ "slug": "text", "color": "#232933", "name": "Text" },
 				{ "slug": "text-soft", "color": "#5f6773", "name": "Text Soft" },
+				{ "slug": "muted", "color": "#8a929f", "name": "Muted" },
+				{ "slug": "border", "color": "#e6e8ec", "name": "Border" },
+				{ "slug": "border-strong", "color": "#d4d8df", "name": "Border Strong" },
 				{ "slug": "background", "color": "#f6f7f9", "name": "Background" },
 				{ "slug": "surface", "color": "#ffffff", "name": "Surface" },
-				{ "slug": "border", "color": "#e6e8ec", "name": "Border" },
-				{ "slug": "white", "color": "#ffffff", "name": "White" }
+				{ "slug": "surface-soft", "color": "#fafafa", "name": "Surface Soft" },
+				{ "slug": "discount", "color": "#d83f5f", "name": "Discount" }
 			]
 		},
 		"typography": {
 			"fontFamilies": [
-				{ "slug": "vazirmatn", "fontFamily": "Vazirmatn, IRANSans, Tahoma, Arial, sans-serif", "name": "Vazirmatn" }
+				{ "slug": "vazirmatn", "fontFamily": "Vazirmatn, IRANSans, Tahoma, Arial, sans-serif", "name": "Vazirmatn" },
+				{ "slug": "iransans", "fontFamily": "IRANSans, Vazirmatn, Tahoma, Arial, sans-serif", "name": "IRANSans" },
+				{ "slug": "tahoma", "fontFamily": "Tahoma, Vazirmatn, IRANSans, Arial, sans-serif", "name": "Tahoma" }
+			],
+			"fontSizes": [
+				{ "slug": "xs", "size": "0.75rem", "name": "Extra Small" },
+				{ "slug": "sm", "size": "0.8125rem", "name": "Small" },
+				{ "slug": "md", "size": "0.875rem", "name": "Medium" },
+				{ "slug": "base", "size": "1rem", "name": "Base" },
+				{ "slug": "lg", "size": "1.125rem", "name": "Large" },
+				{ "slug": "xl", "size": "1.375rem", "name": "Extra Large" },
+				{ "slug": "2xl", "size": "1.75rem", "name": "2X Large" }
+			]
+		},
+		"spacing": {
+			"units": [ "rem", "px", "%" ],
+			"spacingSizes": [
+				{ "slug": "1", "size": "0.25rem", "name": "1" },
+				{ "slug": "2", "size": "0.5rem", "name": "2" },
+				{ "slug": "3", "size": "0.75rem", "name": "3" },
+				{ "slug": "4", "size": "1rem", "name": "4" },
+				{ "slug": "5", "size": "1.25rem", "name": "5" },
+				{ "slug": "6", "size": "1.5rem", "name": "6" },
+				{ "slug": "8", "size": "2rem", "name": "8" },
+				{ "slug": "10", "size": "2.5rem", "name": "10" },
+				{ "slug": "12", "size": "3rem", "name": "12" }
+			]
+		},
+		"layout": {
+			"contentSize": "1440px",
+			"wideSize": "1440px"
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"shadow": {
+			"presets": [
+				{ "slug": "sm", "name": "Small", "shadow": "0 1px 2px rgba(15, 23, 42, 0.06)" },
+				{ "slug": "md", "name": "Medium", "shadow": "0 8px 20px rgba(15, 23, 42, 0.08)" },
+				{ "slug": "lg", "name": "Large", "shadow": "0 16px 32px rgba(15, 23, 42, 0.10)" }
 			]
 		}
 	},
-	"templateParts": []
+	"templateParts": [
+		{
+			"name": "hero-section",
+			"title": "Hero Section",
+			"area": "header"
+		},
+		{
+			"name": "section-trust",
+			"title": "Trust / Services Row",
+			"area": "footer"
+		}
+	]
 }
