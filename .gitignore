@@ -83,6 +83,8 @@ build/
 *.rar
 *.7z
 
-.playwright-
-playwright-screenshots
+# Playwright screenshots and state
+playwright-screenshots/
+.opencode/playwright-screenshots/
 .playwright-*
+*.playwright-screenshots/

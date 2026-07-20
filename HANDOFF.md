@@ -3,15 +3,22 @@
 ## Current Status
 
 - The `scarf` theme exists and is WordPress-recognisable at `wp-content/themes/scarf/`.
-- Theme is functionally bootstrapped: constants, supports (title-tag, post-thumbnails, WooCommerce, html5, primary menu), and CSS/JS enqueuing active.
+- Theme is functionally bootstrapped: constants, supports (title-tag, post-thumbnails, custom-logo, WooCommerce, html5, primary menu), and CSS/JS enqueuing active.
 - Global CSS design tokens and RTL foundation are active in `assets/css/main.css`.
+- **Customizer fully registered** with 6 sections: Colors (12 color pickers), Typography (font family + heading scale), Header (sticky, search, account toggles), Footer (copyright, 3 social links), Hero (title, description, CTA text/url, bg color), Contact (phone, email, address, hours).
+- **Customizer output connected**: `scarf_customizer_css()` outputs inline CSS overriding CSS custom properties via `get_theme_mod()` — colors, font, heading scale, hero bg, sticky header all wired. Live preview JS for colors/typography/hero in `customizer-preview.js`.
+- **Widget Areas registered**: Footer columns 1–4 (`footer-col-1` to `footer-col-4`), Shop sidebar (`sidebar-shop`), Homepage top/bottom (`homepage-top`, `homepage-bottom`).
+- **Footer uses widget areas**: `footer.php` iterates `footer-col-1` through `footer-col-4` with `dynamic_sidebar()` and shows empty state when inactive.
+- **Front page uses widget areas**: `front-page.php` calls `dynamic_sidebar('homepage-top')` and `dynamic_sidebar('homepage-bottom')` between product sections.
+- **Block Patterns registered**: 16 patterns across 5 categories (scarf, scarf-hero, scarf-cta, scarf-products, scarf-content) — hero variants, CTA banners, product grids, category showcase, testimonials, FAQ, about section, newsletter, trust badges, promo banner.
 - Header: logo/site name, search (Persian placeholder), account link, WooCommerce cart link with count badge, primary navigation row with fallback. All user-facing strings Persian and translatable.
 - Mobile menu + filter drawer toggles work (vanilla JS, aria-expanded/aria-controls, Escape key, progressive enhancement).
 - Hero section, placeholder system, homepage sections (categories, offers, new arrivals, best sellers, services) implemented.
-- WooCommerce: product cards via hooks/CSS (no template overrides), shop archive with sidebar + filter toggle, single product page with custom sale badge + variation select, cart/checkout fully styled.
+- WooCommerce: product cards via hooks/CSS (no template overrides), shop archive with sidebar + filter toggle, single product page with custom sale badge + variation select, cart/checkout fully styled. **Cart AJAX fragment for live count updates.**
 - **Ultimate Member pages: login, register, account, profile, password-reset are styled to match theme design system (Stage 12).**
-- **Footer: 4-column Persian e-commerce footer with trust row, social icons, and bottom bar (Stage 13).**
+- **Footer: 4-column Persian e-commerce footer with widget areas, trust row, and bottom bar (Stage 13 + widget integration).**
 - **Placeholder filter (`woocommerce_placeholder_img`), empty state hook (`woocommerce_no_products_found`), Persian microcopy audit completed (Stage 14).**
+- **how-to-use-theme/ documentation**: 9 docs covering quick-start, customizer, block patterns, CSS design system, template parts, WooCommerce integration, and quick reference.
 - No WooCommerce template overrides used. No woocommerce/ directory exists.
 
 ## Important Rules
@@ -409,6 +416,181 @@ Validation:
 - No superglobal usage, no unsafe output, no capability/permission issues.
 - Theme is release-ready.
 
+### Stage 18 — Block Pattern Registration
+
+Date: 2026-07-11
+
+Summary:
+- Created `inc/block-patterns.php` with 5 pattern categories and 16 block patterns:
+  - Categories: `scarf`, `scarf-hero`, `scarf-cta`, `scarf-products`, `scarf-content`
+  - Patterns: `scarf/hero-banner`, `scarf/hero-split`, `scarf/hero-fullwidth`, `scarf/promo-banner`, `scarf/cta-banner`, `scarf/cta-centered`, `scarf/category-grid`, `scarf/category-showcase`, `scarf/product-showcase`, `scarf/product-grid-3`, `scarf/product-grid-4`, `scarf/product-featured`, `scarf/trust-badges`, `scarf/about-section`, `scarf/newsletter`, `scarf/two-column-split`, `scarf/testimonials`, `scarf/faq`
+  - All patterns use Persian text, RTL-friendly block markup, Vazirmatn font family, and design system colors.
+  - Guarded with `function_exists('register_block_pattern')`.
+- Added `require_once SCARF_DIR . '/inc/block-patterns.php'` to `functions.php`.
+
+Files changed:
+- `wp-content/themes/scarf/inc/block-patterns.php` (new)
+- `wp-content/themes/scarf/functions.php` (update — require block-patterns.php)
+
+Validation:
+- PHP syntax passed.
+- All block patterns registered on `init` hook.
+- No external dependencies.
+
+### Stage 19 — Widget Areas Registration
+
+Date: 2026-07-11
+
+Summary:
+- Registered 7 widget areas in `functions.php` via `scarf_widgets_init()`:
+  - Footer columns: `footer-col-1` through `footer-col-4` (4 separate widget areas for 4-column footer layout)
+  - Shop sidebar: `sidebar-shop` (for WooCommerce archive filters)
+  - Homepage areas: `homepage-top`, `homepage-bottom` (for inserting widgets between homepage sections)
+- Widget markup uses theme class names for consistent styling.
+
+Files changed:
+- `wp-content/themes/scarf/functions.php` (update — `scarf_widgets_init()` with 7 sidebars)
+
+Validation:
+- Brace counts balanced.
+- All sidebars registered with proper before/after widget and title markup.
+
+### Stage 20 — Footer Widget Integration
+
+Date: 2026-07-11
+
+Summary:
+- Rewrote `footer.php` to use `dynamic_sidebar()` for all 4 footer columns instead of hardcoded content.
+- Footer iterates `footer-col-1` through `footer-col-4` using a `for` loop.
+- Each column renders widget content when active, empty div when inactive.
+- Copyright bar uses `get_theme_mod('scarf_copyright_text')` with fallback to dynamic Persian copyright string.
+- Social links now use Customizer settings (`scarf_instagram`, `scarf_telegram`, `scarf_whatsapp` via `get_theme_mod()`).
+- Contact info uses Customizer settings (`scarf_phone`, `scarf_email`, `scarf_address`, `scarf_hours` via `get_theme_mod()`).
+
+Files changed:
+- `wp-content/themes/scarf/footer.php` (rewrite — widget-based columns + customizer values)
+
+Validation:
+- Brace counts balanced.
+- All outputs escaped with `esc_html()` and `esc_url()`.
+
+### Stage 21 — Customizer Full Registration
+
+Date: 2026-07-11
+
+Summary:
+- Created `inc/customizer.php` with complete Customizer panel registration:
+  - **Panel**: `scarf_panel` (تنظیمات قالب شال)
+  - **Colors section**: 12 color pickers with `sanitize_hex_color` and `postMessage` transport
+  - **Typography section**: Font family select (Vazirmatn/IRANSans/Tahoma) + heading scale select (0.9–1.2)
+  - **Header section**: Sticky header radio, show search checkbox, show account checkbox
+  - **Footer section**: Copyright text input, 3 social link URL fields (Instagram, Telegram, WhatsApp)
+  - **Hero section**: Title, description, CTA text, CTA URL, background color — all with `postMessage` transport
+  - **Contact section**: Phone, email, address, hours — text inputs
+- Implemented `scarf_customizer_css()` which outputs inline CSS via `wp_add_inline_style('scarf-main')`:
+  - All 12 color custom properties read from `get_theme_mod()` and injected into `:root`
+  - Font family and heading scale applied
+  - Hero background color applied
+  - Sticky header override when disabled
+- Created `assets/js/customizer-preview.js` for live preview in Customizer:
+  - Color bindings for all 12 colors
+  - Font family live update
+  - Heading scale live update (recalculates 2xl/xl/lg)
+  - Hero background color live update
+
+Files changed:
+- `wp-content/themes/scarf/inc/customizer.php` (new)
+- `wp-content/themes/scarf/assets/js/customizer-preview.js` (new)
+- `wp-content/themes/scarf/functions.php` (update — require customizer.php)
+
+Validation:
+- PHP syntax passed.
+- All settings have `sanitize_callback`.
+- All color settings use `sanitize_hex_color`.
+- Customizer preview JS uses `customize-preview` dependency.
+
+### Stage 22 — Header Customizer Integration
+
+Date: 2026-07-11
+
+Summary:
+- Updated `header.php` to use Customizer settings:
+  - Search visibility: `get_theme_mod('scarf_show_search', 'yes')` wraps search form in conditional
+  - Account visibility: `get_theme_mod('scarf_show_account', 'yes')` wraps account link in conditional
+  - Custom logo support already present from Stage 17.
+
+Files changed:
+- `wp-content/themes/scarf/header.php` (update — customizer conditionals for search/account)
+
+Validation:
+- PHP syntax passed.
+- All outputs properly escaped.
+- Default behavior unchanged when Customizer not configured.
+
+### Stage 23 — Homepage Widget Area Integration
+
+Date: 2026-07-11
+
+Summary:
+- Updated `front-page.php` to call `dynamic_sidebar('homepage-top')` between categories and offers sections, and `dynamic_sidebar('homepage-bottom')` after services section.
+- Both widget areas wrapped in `is_active_sidebar()` checks — only render when widgets are assigned.
+
+Files changed:
+- `wp-content/themes/scarf/front-page.php` (update — homepage-top and homepage-bottom widget areas)
+
+Validation:
+- PHP syntax passed.
+- Widget areas properly guarded.
+
+### Stage 24 — Bug Fixes: Shop Container & AJAX Cart
+
+Date: 2026-07-11
+
+Summary:
+- Fixed shop page container CSS — product grid was touching edges. Added proper padding and container rules.
+- Added AJAX cart fragment support: `scarf_cart_fragment()` hooked to `woocommerce_add_to_cart_fragments` to update cart count badge dynamically without page reload.
+
+Files changed:
+- `wp-content/themes/scarf/assets/css/woocommerce.css` (fix — shop container padding)
+- `wp-content/themes/scarf/functions.php` (update — `scarf_cart_fragment()` AJAX fragment)
+
+Validation:
+- JS syntax passed.
+- Cart fragment properly outputs escaped count.
+- `woocommerce_add_to_cart_fragments` filter correctly used.
+
+### Stage 25 — Documentation & How-to-Use-Theme
+
+Date: 2026-07-12
+
+Summary:
+- Created `how-to-use-theme/` directory with 9 documentation files:
+  - `README.md` — Overview and index
+  - `QUICK-START.md` — Installation and first-time setup guide
+  - `QUICK-REFERENCE.md` — Quick reference for theme features
+  - `customizer.md` — Full Customizer settings guide for designers
+  - `block-patterns.md` — Block patterns usage guide
+  - `BLOCK-PATTERNS-GUIDE.md` — Extended block patterns reference
+  - `css-design-system.md` — CSS tokens and design system reference
+  - `template-parts.md` — Template parts structure and customization
+  - `woocommerce-integration.md` — WooCommerce hooks and styling guide
+- All docs in English for developer/designer use, with Persian UI string examples.
+
+Files changed:
+- `wp-content/themes/scarf/how-to-use-theme/README.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/QUICK-START.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/QUICK-REFERENCE.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/customizer.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/block-patterns.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/BLOCK-PATTERNS-GUIDE.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/css-design-system.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/template-parts.md` (new)
+- `wp-content/themes/scarf/how-to-use-theme/woocommerce-integration.md` (new)
+
+Validation:
+- All files exist and are well-structured.
+- No code changes, documentation only.
+
 ### Stage 16 — Playwright Full Visual Audit & Fix Pass
 
 Date: 2026-07-11
@@ -521,14 +703,17 @@ Date: 2026-07-10
 
 ## Current Open Tasks
 
-- All stages complete. Theme ready for production deployment.
-- Pending user request for future enhancements.
+- Customizer values are connected to templates via `get_theme_mod()` for colors, typography, header, footer, hero, and contact. However, some template sections (hero-section.php, section-categories.php, section-services.php) still use hardcoded values instead of reading from Customizer. These need to be wired up.
+- Widget areas are registered and used in footer and front-page, but the shop sidebar `dynamic_sidebar()` call in `inc/woocommerce.php` should be verified.
+- Block Patterns are registered but not validated via Playwright (editor view).
+- how-to-use-theme documentation exists but may need updates to reflect latest changes.
+- No product screenshots/screenshot.png exists for the theme.
 
 ## Architecture Decisions
 
 - **Batch 3: No WooCommerce template overrides.** All product card customization done via hooks (sale badge, stock badge, add-to-cart link filter) and CSS. No `woocommerce/` directory created. This keeps full compatibility with WooCommerce updates. If future layout limitations appear (e.g., card element reordering impossible with CSS alone), they will be documented before adding any override.
 - **Batch 3: Placeholder system.** Inline SVG generated by PHP helper `scarf_placeholder_image()`. No external images, no CDN, no CSS-only hacks. Easy to replace with WordPress attachment images later.
-- **Batch 3: Homepage via `front-page.php` + template parts.** No Customizer settings. Sections are hardcoded, easily modifiable.
+- **Batch 3: Homepage via `front-page.php` + template parts.** Sections are modular template parts. Homepage has widget areas (top/bottom) for flexible content insertion.
 
 - **Batch 4: No WooCommerce template overrides for cart/checkout.** All cart, checkout, notice, and single-product styling done via CSS only. This keeps full WooCommerce compatibility and avoids complex template maintenance. If future requirements need structural changes (e.g., checkout field reordering), they will be done via filters or as a last resort via overrides.
 - **Batch 4: Variation attributes styled as pill dropdowns.** The `woocommerce_dropdown_variation_attribute_options_html` filter adds a CSS class; actual pill appearance is done via CSS (appearance:none + custom arrow). True color/image swatches would require a plugin or JS-heavy approach and are deferred.
@@ -544,6 +729,11 @@ Date: 2026-07-10
 - **Batch 5: `woocommerce_placeholder_img` filter for product placeholder SVGs.** Filter fires for loop product images only (not single product gallery, which uses `wc_placeholder_img_src()`). Function respects `$dimensions` parameter. (Architect-validated.)
 - **Batch 5: `woocommerce_no_products_found` action for empty state.** Removes default WC handler and outputs Persian `.scarf-empty-state`. Simple single-action hook, no template override needed. (Architect-validated.)
 
+- **Batch 7: Customizer CSS output via `wp_add_inline_style`.** Customizer values are read by `scarf_customizer_css()` and injected as inline CSS overriding CSS custom properties. This is the correct WordPress pattern — no separate stylesheet needed. Live preview uses `customize-preview` JS API. (Architect-validated.)
+- **Batch 7: Widget areas for footer.** Footer uses 4 separate `dynamic_sidebar()` calls instead of hardcoded content. This allows store owners to manage footer content via WordPress admin → Appearance → Widgets. Trust row remains hardcoded as template part (not widget) since it rarely changes. (Architect-validated.)
+- **Batch 7: Block patterns registered via `init` hook.** All 16 patterns use WordPress block markup, not custom shortcodes. This ensures compatibility with WordPress block editor and Full Site Editing. (Architect-validated.)
+- **Batch 7: AJAX cart fragment.** `scarf_cart_fragment()` hooked to `woocommerce_add_to_cart_fragments` for live cart count updates without page reload. Properly guarded with `WC()->cart` null check.
+
 ## Known Issues / Risks
 
 *(None yet.)*
@@ -558,11 +748,21 @@ wp theme activate scarf
 
 ## Last Session Summary
 
-**What was requested:** Batch 6 — Stages 15, 16, 17 (Final Release Hardening: accessibility/RTL/responsive polish, Playwright full audit, packaging/documentation).
+**What was requested:** Batch 7 — Post-release hardening: widget areas, block patterns, Customizer integration, bug fixes, documentation.
 
 **What changed:**
-- Stage 15: Added `aria-hidden="true"` to social icon SVGs in `footer.php`. RTL/`!important`/left-right audit — no issues found. All CSS uses logical properties. Both `!important` instances justified.
-- Stage 16: Full Playwright audit — 11 pages at 3 viewports each (1440×900, 768×1024, 390×844). Zero console errors. Fixed shop page title English→Persian via `woocommerce_page_title` filter. Fixed breadcrumb "Shop" via `woocommerce_breadcrumb_defaults` filter. 33 screenshots captured.
-- Stage 17: Added `custom-logo` theme support. Updated `style.css` tags (removed unused, added accurate). Created `README.md`. Security review: zero superglobal access, no unsafe output, no admin actions — all clean.
+- Stage 18: Created `inc/block-patterns.php` with 16 block patterns across 5 categories (hero, cta, products, content, general). All Persian, RTL-friendly, theme-colored.
+- Stage 19: Registered 7 widget areas: footer columns 1–4, shop sidebar, homepage top/bottom.
+- Stage 20: Rewrote `footer.php` to use widget-based columns + Customizer values for copyright/social/contact.
+- Stage 21: Created `inc/customizer.php` with full Customizer panel (6 sections, 20+ settings) and live preview JS.
+- Stage 22: Updated `header.php` to use Customizer toggles for search/account visibility.
+- Stage 23: Updated `front-page.php` with `dynamic_sidebar()` calls for homepage-top and homepage-bottom widget areas.
+- Stage 24: Fixed shop container CSS bug + added AJAX cart fragment support.
+- Stage 25: Created `how-to-use-theme/` directory with 9 documentation files.
 
-**What should happen next:** All initial stages complete. Theme ready for production. Pending user request for future enhancements.
+**What should happen next:**
+1. Connect remaining hardcoded template parts to Customizer (hero-section.php WordPress→Customizer, section-categories.php, section-services.php).
+2. Verify shop sidebar `dynamic_sidebar()` works in `inc/woocommerce.php`.
+3. Run Playwright validation on block pattern editor views.
+4. Create screenshot.png.
+5. Update how-to-use-theme docs to cover Customizer and widget integration.
