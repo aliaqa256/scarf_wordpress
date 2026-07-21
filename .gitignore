@@ -82,3 +82,8 @@ build/
 *.tar.gz
 *.rar
 *.7z
+
+
+.opencode/playwright-screenshots/
+.playwright-mcp/
+playwright-screenshots/
