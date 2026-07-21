@@ -1,0 +1,113 @@
+/*
+Theme Name: Scarf
+Theme URI:
+Author: Developer
+Author URI:
+Description: A custom WordPress/WooCommerce theme for an online scarf and shawl store, inspired by Digikala UX.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: scarf
+Tags: custom-colors, custom-menu, featured-images, threaded-comments, translation-ready, rtl-language-support, block-styles, full-site-editing
+*/
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--scarf-font-family, Vazirmatn, IRANSans, Tahoma, Arial, sans-serif);
+    background-color: var(--scarf-color-background, #f6f7f9);
+    color: var(--scarf-color-text, #232933);
+    direction: rtl;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Container & Typography */
+.site {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--scarf-color-text);
+    margin-top: 0;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e6e8ec;
+    background: #fff;
+    margin-bottom: 2rem;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--scarf-color-primary);
+}
+
+.main-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-navigation a {
+    color: var(--scarf-color-text);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--scarf-color-primary);
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #e6e8ec;
+    margin-top: 3rem;
+    color: #5f6773;
+    background: #fff;
+}
+
+.site-footer a {
+    color: var(--scarf-color-secondary);
+}
+
+/* Gutenberg alignment */
+.alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+}
+
+.alignwide {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
