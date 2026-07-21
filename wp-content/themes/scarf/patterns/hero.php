@@ -32,7 +32,7 @@
         <!-- wp:column {"verticalAlignment":"center"} -->
         <div class="wp-block-column is-vertically-aligned-center">
             <!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-            <figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-placeholder.png' ); ?>" alt="<?php echo esc_attr__( 'تصویر کمپین شال و روسری', 'scarf' ); ?>"/></figure>
+            <figure class="wp-block-image size-large"><img src="https://via.placeholder.com/600x400.png?text=Hero+Image" alt="<?php echo esc_attr__( 'تصویر کمپین شال و روسری', 'scarf' ); ?>"/></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->
