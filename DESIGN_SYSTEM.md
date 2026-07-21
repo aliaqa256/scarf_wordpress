@@ -118,6 +118,7 @@ Avoid:
 ## Color System
 
 Use CSS custom properties.
+Note: These CSS variables will be dynamic and customizable by the designer via the native WordPress Customizer.
 
 Recommended starting palette:
 
@@ -830,6 +831,8 @@ Recommended aspect ratio:
 Core components to build over stages:
 
 * Site header
+* Hero Section (Gutenberg Block / Pattern - customizable by designer)
+* Dynamic Categories Section (Gutenberg Block / Pattern)
 * Search box
 * Category navigation
 * Mobile menu
