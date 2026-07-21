@@ -2,7 +2,7 @@
 /**
  * Title: Dynamic Categories Section
  * Slug: scarf/dynamic-categories
- * Categories: featured
+ * Categories: scarf
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->

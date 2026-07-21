@@ -2,7 +2,7 @@
 /**
  * Title: Hero Section
  * Slug: scarf/hero
- * Categories: featured
+ * Categories: scarf
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"color":{"background":"var:preset|color|primary-soft"}},"layout":{"type":"constrained"}} -->
