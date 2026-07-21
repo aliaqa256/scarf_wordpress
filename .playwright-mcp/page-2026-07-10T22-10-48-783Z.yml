@@ -1,0 +1,90 @@
+- generic [active] [ref=f22e1]:
+  - generic [ref=f22e2]:
+    - link "پرش به محتوای اصلی" [ref=f22e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f22e4]:
+      - generic [ref=f22e6]:
+        - link "scarf" [ref=f22e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f22e10]:
+          - generic [ref=f22e11]: جست‌وجو در فروشگاه
+          - generic [ref=f22e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f22e13]: test
+            - button "جست‌وجو" [ref=f22e14] [cursor=pointer]
+        - generic [ref=f22e15]:
+          - link "حساب کاربری" [ref=f22e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید 1" [ref=f22e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+            - text: سبد خرید
+            - generic [ref=f22e18]: "1"
+      - button "باز کردن منو" [ref=f22e21] [cursor=pointer]
+    - main [ref=f22e27]:
+      - navigation "Breadcrumb" [ref=f22e28]:
+        - link "خانه" [ref=f22e29] [cursor=pointer]:
+          - /url: http://localhost
+        - text: /
+        - link "Shop" [ref=f22e30] [cursor=pointer]:
+          - /url: http://localhost/shop/
+        - text: / نتیجه جستجو برای “test”
+      - heading "نتیجه جستجو “test”" [level=1] [ref=f22e32]
+      - generic [ref=f22e33]:
+        - paragraph [ref=f22e34]: محصولی با این فیلترها یافت نشد
+        - link "حذف فیلترها" [ref=f22e35] [cursor=pointer]:
+          - /url: http://localhost/shop/
+    - contentinfo [ref=f22e36]:
+      - generic [ref=f22e37]:
+        - generic [ref=f22e39]:
+          - generic [ref=f22e40]: ارسال سریع سفارش‌ها
+          - generic [ref=f22e48]: ضمانت بازگشت کالا
+          - generic [ref=f22e54]: پرداخت امن
+          - generic [ref=f22e59]: پشتیبانی خرید
+        - generic [ref=f22e64]:
+          - generic [ref=f22e65]:
+            - heading "راهنمای خرید" [level=3] [ref=f22e66]
+            - list [ref=f22e67]:
+              - listitem [ref=f22e68]:
+                - link "راهنمای انتخاب شال" [ref=f22e69] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f22e70]:
+                - link "روش‌های ارسال" [ref=f22e71] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f22e72]:
+                - link "روش‌های پرداخت" [ref=f22e73] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f22e74]:
+                - link "ضمانت بازگشت کالا" [ref=f22e75] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f22e76]:
+            - heading "خدمات مشتریان" [level=3] [ref=f22e77]
+            - list [ref=f22e78]:
+              - listitem [ref=f22e79]:
+                - link "تماس با ما" [ref=f22e80] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f22e81]:
+                - link "سوالات متداول" [ref=f22e82] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f22e83]:
+                - link "قوانین و مقررات" [ref=f22e84] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f22e85]:
+                - link "حریم خصوصی" [ref=f22e86] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f22e87]:
+            - heading "درباره فروشگاه" [level=3] [ref=f22e88]
+            - paragraph [ref=f22e89]: فروشگاه تخصصی شال و روسری با انواع مدل‌های روز و کلاسیک. تضمین اصالت و کیفیت محصولات.
+            - generic [ref=f22e90]:
+              - link "اینستاگرام" [ref=f22e91] [cursor=pointer]:
+                - /url: "#"
+              - link "تلگرام" [ref=f22e95] [cursor=pointer]:
+                - /url: "#"
+              - link "واتساپ" [ref=f22e99] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f22e102]:
+            - heading "ارتباط با ما" [level=3] [ref=f22e103]
+            - paragraph [ref=f22e104]: "تلفن: ۰۲۱-۱۲۳۴۵۶۷۸"
+            - paragraph [ref=f22e105]: "ایمیل: info@scarfstore.ir"
+            - paragraph [ref=f22e106]: "ساعات پاسخگویی: ۹ صبح تا ۱۸"
+        - paragraph [ref=f22e108]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - status [ref=f22e109]

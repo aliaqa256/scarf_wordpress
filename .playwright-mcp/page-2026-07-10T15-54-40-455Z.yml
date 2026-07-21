@@ -1,0 +1,135 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - link "پرش به محتوای اصلی" [ref=f2e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f2e4]:
+      - generic [ref=f2e6]:
+        - link "scarf" [ref=f2e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f2e10]:
+          - generic [ref=f2e11]: جست‌وجو در فروشگاه
+          - generic [ref=f2e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f2e13]
+            - button "جست‌وجو" [ref=f2e14] [cursor=pointer]
+        - generic [ref=f2e15]:
+          - link "حساب کاربری" [ref=f2e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید" [ref=f2e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+      - navigation "منوی اصلی" [ref=f2e20]:
+        - list [ref=f2e21]:
+          - listitem [ref=f2e22]:
+            - link "خانه" [ref=f2e23] [cursor=pointer]:
+              - /url: http://localhost/
+          - listitem [ref=f2e24]:
+            - link "فروشگاه" [ref=f2e25] [cursor=pointer]:
+              - /url: http://localhost/shop/
+          - listitem [ref=f2e26]:
+            - link "ورود | ثبت‌نام" [ref=f2e27] [cursor=pointer]:
+              - /url: http://localhost/login/
+    - main [ref=f2e28]:
+      - generic [ref=f2e30]:
+        - img "تصویر کمپین شال و روسری" [ref=f2e32]
+        - generic [ref=f2e37]:
+          - heading "جدیدترین شال و روسری‌ها" [level=1] [ref=f2e38]
+          - paragraph [ref=f2e39]: مجموعه‌ای از بهترین و شیک‌ترین شال و روسری‌های بازار با کیفیت عالی و قیمت مناسب
+          - link "مشاهده محصولات" [ref=f2e40] [cursor=pointer]:
+            - /url: http://localhost/shop/
+      - generic [ref=f2e41]:
+        - heading "دسته‌بندی‌ها" [level=2] [ref=f2e43]
+        - generic [ref=f2e44]:
+          - link "شال شال" [ref=f2e45] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "شال" [ref=f2e47]
+            - generic [ref=f2e51]: شال
+          - link "روسری روسری" [ref=f2e52] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "روسری" [ref=f2e54]
+            - generic [ref=f2e58]: روسری
+          - link "شال مجلسی شال مجلسی" [ref=f2e59] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "شال مجلسی" [ref=f2e61]
+            - generic [ref=f2e65]: شال مجلسی
+          - link "روسری نخی روسری نخی" [ref=f2e66] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "روسری نخی" [ref=f2e68]
+            - generic [ref=f2e72]: روسری نخی
+          - link "تخفیف‌دار تخفیف‌دار" [ref=f2e73] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "تخفیف‌دار" [ref=f2e75]
+            - generic [ref=f2e79]: تخفیف‌دار
+      - generic [ref=f2e80]:
+        - generic [ref=f2e81]:
+          - heading "پیشنهاد ویژه" [level=2] [ref=f2e82]
+          - link "مشاهده همه" [ref=f2e83] [cursor=pointer]:
+            - /url: http://localhost/shop/
+        - list [ref=f2e84]:
+          - listitem [ref=f2e85]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f2e86] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f2e87]
+              - generic [ref=f2e88]: 99%
+              - heading "تست ۱" [level=2] [ref=f2e89]
+              - generic [ref=f2e90]:
+                - deletion [ref=f2e91]:
+                  - generic [ref=f2e92]: ﷼11.111
+                - generic [ref=f2e94]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f2e95]:
+                  - generic [ref=f2e96]: ﷼111
+                - generic [ref=f2e98]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f2e99] [cursor=pointer]': افزودن به سبد خرید
+      - generic [ref=f2e101]:
+        - generic [ref=f2e102]:
+          - heading "محصولات جدید" [level=2] [ref=f2e103]
+          - link "مشاهده همه" [ref=f2e104] [cursor=pointer]:
+            - /url: http://localhost/shop/
+        - list [ref=f2e105]:
+          - listitem [ref=f2e106]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f2e107] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f2e108]
+              - generic [ref=f2e109]: 99%
+              - heading "تست ۱" [level=2] [ref=f2e110]
+              - generic [ref=f2e111]:
+                - deletion [ref=f2e112]:
+                  - generic [ref=f2e113]: ﷼11.111
+                - generic [ref=f2e115]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f2e116]:
+                  - generic [ref=f2e117]: ﷼111
+                - generic [ref=f2e119]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f2e120] [cursor=pointer]': افزودن به سبد خرید
+      - generic [ref=f2e122]:
+        - generic [ref=f2e123]:
+          - heading "پرفروش‌ترین‌ها" [level=2] [ref=f2e124]
+          - link "مشاهده همه" [ref=f2e125] [cursor=pointer]:
+            - /url: http://localhost/shop/
+        - list [ref=f2e126]:
+          - listitem [ref=f2e127]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f2e128] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f2e129]
+              - generic [ref=f2e130]: 99%
+              - heading "تست ۱" [level=2] [ref=f2e131]
+              - generic [ref=f2e132]:
+                - deletion [ref=f2e133]:
+                  - generic [ref=f2e134]: ﷼11.111
+                - generic [ref=f2e136]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f2e137]:
+                  - generic [ref=f2e138]: ﷼111
+                - generic [ref=f2e140]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f2e141] [cursor=pointer]': افزودن به سبد خرید
+      - generic [ref=f2e144]:
+        - generic [ref=f2e145]:
+          - generic [ref=f2e146]: 🚚
+          - generic [ref=f2e147]: ارسال سریع سفارش‌ها
+        - generic [ref=f2e148]:
+          - generic [ref=f2e149]: 🔄
+          - generic [ref=f2e150]: ضمانت بازگشت کالا
+        - generic [ref=f2e151]:
+          - generic [ref=f2e152]: 🔒
+          - generic [ref=f2e153]: پرداخت امن
+        - generic [ref=f2e154]:
+          - generic [ref=f2e155]: 💬
+          - generic [ref=f2e156]: پشتیبانی خرید
+  - text: 
+  - status [ref=f2e157]

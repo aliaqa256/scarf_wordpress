@@ -1,0 +1,60 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - link "پرش به محتوای اصلی" [ref=f3e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f3e4]:
+      - generic [ref=f3e6]:
+        - link "scarf" [ref=f3e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f3e10]:
+          - generic [ref=f3e11]: جست‌وجو در فروشگاه
+          - generic [ref=f3e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f3e13]
+            - button "جست‌وجو" [ref=f3e14] [cursor=pointer]
+        - generic [ref=f3e15]:
+          - link "حساب کاربری" [ref=f3e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید" [ref=f3e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+      - button "باز کردن منو" [ref=f3e20] [cursor=pointer]
+    - main [ref=f3e24]:
+      - navigation "Breadcrumb" [ref=f3e25]:
+        - link "خانه" [ref=f3e26] [cursor=pointer]:
+          - /url: http://localhost
+        - text: /
+        - link "Uncategorized" [ref=f3e27] [cursor=pointer]:
+          - /url: http://localhost/product-category/uncategorized/
+        - text: / تست ۱
+      - generic [ref=f3e29]:
+        - generic [ref=f3e30]: 99%
+        - link [ref=f3e34] [cursor=pointer]:
+          - /url: http://localhost/wp-content/uploads/2026/07/Screenshot-from-2026-06-27-20-32-57.png
+          - img "تست ۱" [ref=f3e35]
+        - generic [ref=f3e36]:
+          - heading "تست ۱" [level=1] [ref=f3e37]
+          - paragraph [ref=f3e38]:
+            - deletion [ref=f3e39]:
+              - generic [ref=f3e40]: ﷼11.111
+            - generic [ref=f3e42]: قیمت اصلی ﷼11.111 بود.
+            - insertion [ref=f3e43]:
+              - generic [ref=f3e44]: ﷼111
+            - generic [ref=f3e46]: قیمت فعلی ﷼111 است.
+          - generic [ref=f3e47]:
+            - generic [ref=f3e48]:
+              - generic [ref=f3e49]: تست ۱ عدد
+              - spinbutton "تعداد محصول" [ref=f3e50]: "1"
+            - button "افزودن به سبد خرید" [ref=f3e51] [cursor=pointer]
+          - generic [ref=f3e53]:
+            - text: "دسته:"
+            - link "Uncategorized" [ref=f3e54] [cursor=pointer]:
+              - /url: http://localhost/product-category/uncategorized/
+        - generic [ref=f3e55]:
+          - tablist [ref=f3e56]:
+            - tab "توضیحات" [selected] [ref=f3e57] [cursor=pointer]
+            - tab "نظرات (0)" [ref=f3e58] [cursor=pointer]
+          - tabpanel "توضیحات" [ref=f3e59]:
+            - heading "توضیحات" [level=2] [ref=f3e60]
+            - paragraph [ref=f3e61]: تست ترین تست ۱
+          - text:     
+  - text: 
+  - status [ref=f3e62]

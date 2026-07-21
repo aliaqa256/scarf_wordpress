@@ -1,0 +1,173 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - link "پرش به محتوای اصلی" [ref=f5e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f5e4]:
+      - generic [ref=f5e6]:
+        - link "scarf" [ref=f5e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f5e10]:
+          - generic [ref=f5e11]: جست‌وجو در فروشگاه
+          - generic [ref=f5e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f5e13]
+            - button "جست‌وجو" [ref=f5e14] [cursor=pointer]
+        - generic [ref=f5e15]:
+          - link "حساب کاربری" [ref=f5e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید 1" [ref=f5e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+            - text: سبد خرید
+            - generic [ref=f5e18]: "1"
+      - button "باز کردن منو" [ref=f5e21] [cursor=pointer]
+    - main [ref=f5e24]:
+      - generic [ref=f5e26]:
+        - img "تصویر کمپین شال و روسری" [ref=f5e28]
+        - generic [ref=f5e33]:
+          - heading "جدیدترین شال و روسری‌ها" [level=1] [ref=f5e34]
+          - paragraph [ref=f5e35]: مجموعه‌ای از بهترین و شیک‌ترین شال و روسری‌های بازار با کیفیت عالی و قیمت مناسب
+          - link "مشاهده محصولات" [ref=f5e36] [cursor=pointer]:
+            - /url: http://localhost/shop/
+      - generic [ref=f5e37]:
+        - heading "دسته‌بندی‌ها" [level=2] [ref=f5e39]
+        - generic [ref=f5e40]:
+          - link "شال شال" [ref=f5e41] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "شال" [ref=f5e43]
+            - generic [ref=f5e47]: شال
+          - link "روسری روسری" [ref=f5e48] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "روسری" [ref=f5e50]
+            - generic [ref=f5e54]: روسری
+          - link "شال مجلسی شال مجلسی" [ref=f5e55] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "شال مجلسی" [ref=f5e57]
+            - generic [ref=f5e61]: شال مجلسی
+          - link "روسری نخی روسری نخی" [ref=f5e62] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "روسری نخی" [ref=f5e64]
+            - generic [ref=f5e68]: روسری نخی
+          - link "تخفیف‌دار تخفیف‌دار" [ref=f5e69] [cursor=pointer]:
+            - /url: http://localhost/shop/
+            - img "تخفیف‌دار" [ref=f5e71]
+            - generic [ref=f5e75]: تخفیف‌دار
+      - generic [ref=f5e76]:
+        - generic [ref=f5e77]:
+          - heading "پیشنهاد ویژه" [level=2] [ref=f5e78]
+          - link "مشاهده همه" [ref=f5e79] [cursor=pointer]:
+            - /url: http://localhost/shop/
+        - list [ref=f5e80]:
+          - listitem [ref=f5e81]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f5e82] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f5e83]
+              - generic [ref=f5e84]: 99%
+              - heading "تست ۱" [level=2] [ref=f5e85]
+              - generic [ref=f5e86]:
+                - deletion [ref=f5e87]:
+                  - generic [ref=f5e88]: ﷼11.111
+                - generic [ref=f5e90]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f5e91]:
+                  - generic [ref=f5e92]: ﷼111
+                - generic [ref=f5e94]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f5e95] [cursor=pointer]': افزودن به سبد خرید
+      - generic [ref=f5e97]:
+        - generic [ref=f5e98]:
+          - heading "محصولات جدید" [level=2] [ref=f5e99]
+          - link "مشاهده همه" [ref=f5e100] [cursor=pointer]:
+            - /url: http://localhost/shop/
+        - list [ref=f5e101]:
+          - listitem [ref=f5e102]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f5e103] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f5e104]
+              - generic [ref=f5e105]: 99%
+              - heading "تست ۱" [level=2] [ref=f5e106]
+              - generic [ref=f5e107]:
+                - deletion [ref=f5e108]:
+                  - generic [ref=f5e109]: ﷼11.111
+                - generic [ref=f5e111]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f5e112]:
+                  - generic [ref=f5e113]: ﷼111
+                - generic [ref=f5e115]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f5e116] [cursor=pointer]': افزودن به سبد خرید
+      - generic [ref=f5e118]:
+        - generic [ref=f5e119]:
+          - heading "پرفروش‌ترین‌ها" [level=2] [ref=f5e120]
+          - link "مشاهده همه" [ref=f5e121] [cursor=pointer]:
+            - /url: http://localhost/shop/
+        - list [ref=f5e122]:
+          - listitem [ref=f5e123]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f5e124] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f5e125]
+              - generic [ref=f5e126]: 99%
+              - heading "تست ۱" [level=2] [ref=f5e127]
+              - generic [ref=f5e128]:
+                - deletion [ref=f5e129]:
+                  - generic [ref=f5e130]: ﷼11.111
+                - generic [ref=f5e132]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f5e133]:
+                  - generic [ref=f5e134]: ﷼111
+                - generic [ref=f5e136]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f5e137] [cursor=pointer]': افزودن به سبد خرید
+      - generic [ref=f5e140]:
+        - generic [ref=f5e141]: ارسال سریع سفارش‌ها
+        - generic [ref=f5e145]: ضمانت بازگشت کالا
+        - generic [ref=f5e149]: پرداخت امن
+        - generic [ref=f5e153]: پشتیبانی خرید
+    - contentinfo [ref=f5e157]:
+      - generic [ref=f5e158]:
+        - generic [ref=f5e160]:
+          - generic [ref=f5e161]: ارسال سریع سفارش‌ها
+          - generic [ref=f5e169]: ضمانت بازگشت کالا
+          - generic [ref=f5e175]: پرداخت امن
+          - generic [ref=f5e180]: پشتیبانی خرید
+        - generic [ref=f5e185]:
+          - generic [ref=f5e186]:
+            - heading "راهنمای خرید" [level=3] [ref=f5e187]
+            - list [ref=f5e188]:
+              - listitem [ref=f5e189]:
+                - link "راهنمای انتخاب شال" [ref=f5e190] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f5e191]:
+                - link "روش‌های ارسال" [ref=f5e192] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f5e193]:
+                - link "روش‌های پرداخت" [ref=f5e194] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f5e195]:
+                - link "ضمانت بازگشت کالا" [ref=f5e196] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f5e197]:
+            - heading "خدمات مشتریان" [level=3] [ref=f5e198]
+            - list [ref=f5e199]:
+              - listitem [ref=f5e200]:
+                - link "تماس با ما" [ref=f5e201] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f5e202]:
+                - link "سوالات متداول" [ref=f5e203] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f5e204]:
+                - link "قوانین و مقررات" [ref=f5e205] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f5e206]:
+                - link "حریم خصوصی" [ref=f5e207] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f5e208]:
+            - heading "درباره فروشگاه" [level=3] [ref=f5e209]
+            - paragraph [ref=f5e210]: فروشگاه تخصصی شال و روسری با انواع مدل‌های روز و کلاسیک. تضمین اصالت و کیفیت محصولات.
+            - generic [ref=f5e211]:
+              - link "اینستاگرام" [ref=f5e212] [cursor=pointer]:
+                - /url: "#"
+              - link "تلگرام" [ref=f5e216] [cursor=pointer]:
+                - /url: "#"
+              - link "واتساپ" [ref=f5e220] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f5e223]:
+            - heading "ارتباط با ما" [level=3] [ref=f5e224]
+            - paragraph [ref=f5e225]: "تلفن: ۰۲۱-۱۲۳۴۵۶۷۸"
+            - paragraph [ref=f5e226]: "ایمیل: info@scarfstore.ir"
+            - paragraph [ref=f5e227]: "ساعات پاسخگویی: ۹ صبح تا ۱۸"
+        - paragraph [ref=f5e229]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - status [ref=f5e230]

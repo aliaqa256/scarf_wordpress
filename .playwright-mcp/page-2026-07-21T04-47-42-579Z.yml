@@ -1,0 +1,74 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - link "پرش به محتوای اصلی" [ref=f1e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f1e4]:
+      - generic [ref=f1e6]:
+        - link "scarf" [ref=f1e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f1e10]:
+          - generic [ref=f1e11]: جست‌وجو در فروشگاه
+          - generic [ref=f1e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f1e13]
+            - button "جست‌وجو" [ref=f1e14] [cursor=pointer]
+        - generic [ref=f1e15]:
+          - link "حساب کاربری" [ref=f1e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید" [ref=f1e18] [cursor=pointer]:
+            - /url: http://localhost/cart/
+      - button "باز کردن منو" [ref=f1e21] [cursor=pointer]
+    - main [ref=f1e27]:
+      - navigation "Breadcrumb" [ref=f1e28]:
+        - link "خانه" [ref=f1e29] [cursor=pointer]:
+          - /url: http://localhost
+        - text: / Shop
+      - heading "فروشگاه" [level=1] [ref=f1e31]
+      - button "فیلتر محصولات" [ref=f1e32] [cursor=pointer]
+      - status [ref=f1e33]: نمایش همه 2 نتیجه
+      - combobox "سفارش خرید" [ref=f1e35] [cursor=pointer]:
+        - option "مرتب‌سازی پیشفرض" [selected]
+        - option "مرتب‌سازی بر اساس محبوبیت"
+        - option "مرتب‌سازی بر اساس امتیاز"
+        - option "مرتب‌سازی بر اساس جدیدترین"
+        - option "مرتب‌سازی بر اساس ارزانترین"
+        - option "مرتب‌سازی بر اساس گرانترین"
+      - list [ref=f1e36]:
+        - listitem [ref=f1e37]:
+          - link "جدید تصویر محصول efaf تومان11.111.111" [ref=f1e38] [cursor=pointer]:
+            - /url: http://localhost/product/efaf/
+            - generic [ref=f1e39]: جدید
+            - img "تصویر محصول" [ref=f1e40]
+            - heading "efaf" [level=2] [ref=f1e44]
+            - generic [ref=f1e45]: تومان11.111.111
+          - 'button "افزودن به سبد خرید: “efaf”" [ref=f1e48] [cursor=pointer]': افزودن به سبد خرید
+        - listitem [ref=f1e50]:
+          - link "پیشنهاد ویژه تست ۱ 99% تست ۱ قیمت اصلی تومان11.111 بود. قیمت فعلی تومان111 است." [ref=f1e51] [cursor=pointer]:
+            - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+            - generic [ref=f1e52]: پیشنهاد ویژه
+            - img "تست ۱" [ref=f1e53]
+            - generic [ref=f1e54]: 99%
+            - heading "تست ۱" [level=2] [ref=f1e55]
+            - generic [ref=f1e56]:
+              - deletion [ref=f1e57]:
+                - generic [ref=f1e58]: تومان11.111
+              - generic [ref=f1e60]: قیمت اصلی تومان11.111 بود.
+              - insertion [ref=f1e61]:
+                - generic [ref=f1e62]: تومان111
+              - generic [ref=f1e64]: قیمت فعلی تومان111 است.
+          - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f1e65] [cursor=pointer]': افزودن به سبد خرید
+    - contentinfo [ref=f1e67]:
+      - generic [ref=f1e68]:
+        - generic [ref=f1e70]:
+          - generic [ref=f1e71]: ارسال سریع سفارش‌ها
+          - generic [ref=f1e73]: ضمانت بازگشت کالا
+          - generic [ref=f1e75]: پرداخت امن
+          - generic [ref=f1e77]: پشتیبانی خرید
+        - generic [ref=f1e81]:
+          - link "۰۲۱-۱۲۳۴۵۶۷۸" [ref=f1e85] [cursor=pointer]:
+            - /url: tel:۰۲۱۱۲۳۴۵۶۷۸
+          - link "info@scarfstore.ir" [ref=f1e89] [cursor=pointer]:
+            - /url: mailto:info@scarfstore.ir
+          - generic [ref=f1e90]: ۹ صبح تا ۱۸
+        - paragraph [ref=f1e94]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - status [ref=f1e97]

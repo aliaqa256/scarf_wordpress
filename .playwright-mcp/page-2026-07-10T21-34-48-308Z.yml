@@ -1,0 +1,103 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - link "پرش به محتوای اصلی" [ref=f10e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f10e4]:
+      - generic [ref=f10e6]:
+        - link "scarf" [ref=f10e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f10e10]:
+          - generic [ref=f10e11]: جست‌وجو در فروشگاه
+          - generic [ref=f10e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f10e13]: xyznonexistent123
+            - button "جست‌وجو" [ref=f10e14] [cursor=pointer]
+        - generic [ref=f10e15]:
+          - link "حساب کاربری" [ref=f10e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید 1" [ref=f10e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+            - text: سبد خرید
+            - generic [ref=f10e18]: "1"
+      - navigation "منوی اصلی" [ref=f10e21]:
+        - list [ref=f10e22]:
+          - listitem [ref=f10e23]:
+            - link "خانه" [ref=f10e24] [cursor=pointer]:
+              - /url: http://localhost/
+          - listitem [ref=f10e25]:
+            - link "فروشگاه" [ref=f10e26] [cursor=pointer]:
+              - /url: http://localhost/shop/
+          - listitem [ref=f10e27]:
+            - link "ورود | ثبت‌نام" [ref=f10e28] [cursor=pointer]:
+              - /url: http://localhost/login/
+    - generic [ref=f10e29]:
+      - main [ref=f10e32]:
+        - navigation "Breadcrumb" [ref=f10e33]:
+          - link "خانه" [ref=f10e34] [cursor=pointer]:
+            - /url: http://localhost
+          - text: /
+          - link "Shop" [ref=f10e35] [cursor=pointer]:
+            - /url: http://localhost/shop/
+          - text: / نتیجه جستجو برای “xyznonexistent123”
+        - heading "نتیجه جستجو “xyznonexistent123”" [level=1] [ref=f10e37]
+        - generic [ref=f10e38]:
+          - paragraph [ref=f10e39]: محصولی با این فیلترها یافت نشد
+          - link "حذف فیلترها" [ref=f10e40] [cursor=pointer]:
+            - /url: http://localhost/shop/
+      - complementary "فیلتر محصولات" [ref=f10e41]:
+        - paragraph [ref=f10e43]: برای فیلتر محصولات از بخش نمایش > ویجت‌ها استفاده کنید.
+    - contentinfo [ref=f10e44]:
+      - generic [ref=f10e45]:
+        - generic [ref=f10e47]:
+          - generic [ref=f10e48]: ارسال سریع سفارش‌ها
+          - generic [ref=f10e56]: ضمانت بازگشت کالا
+          - generic [ref=f10e62]: پرداخت امن
+          - generic [ref=f10e67]: پشتیبانی خرید
+        - generic [ref=f10e72]:
+          - generic [ref=f10e73]:
+            - heading "راهنمای خرید" [level=3] [ref=f10e74]
+            - list [ref=f10e75]:
+              - listitem [ref=f10e76]:
+                - link "راهنمای انتخاب شال" [ref=f10e77] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f10e78]:
+                - link "روش‌های ارسال" [ref=f10e79] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f10e80]:
+                - link "روش‌های پرداخت" [ref=f10e81] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f10e82]:
+                - link "ضمانت بازگشت کالا" [ref=f10e83] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f10e84]:
+            - heading "خدمات مشتریان" [level=3] [ref=f10e85]
+            - list [ref=f10e86]:
+              - listitem [ref=f10e87]:
+                - link "تماس با ما" [ref=f10e88] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f10e89]:
+                - link "سوالات متداول" [ref=f10e90] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f10e91]:
+                - link "قوانین و مقررات" [ref=f10e92] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f10e93]:
+                - link "حریم خصوصی" [ref=f10e94] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f10e95]:
+            - heading "درباره فروشگاه" [level=3] [ref=f10e96]
+            - paragraph [ref=f10e97]: فروشگاه تخصصی شال و روسری با انواع مدل‌های روز و کلاسیک. تضمین اصالت و کیفیت محصولات.
+            - generic [ref=f10e98]:
+              - link "اینستاگرام" [ref=f10e99] [cursor=pointer]:
+                - /url: "#"
+              - link "تلگرام" [ref=f10e103] [cursor=pointer]:
+                - /url: "#"
+              - link "واتساپ" [ref=f10e107] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f10e110]:
+            - heading "ارتباط با ما" [level=3] [ref=f10e111]
+            - paragraph [ref=f10e112]: "تلفن: ۰۲۱-۱۲۳۴۵۶۷۸"
+            - paragraph [ref=f10e113]: "ایمیل: info@scarfstore.ir"
+            - paragraph [ref=f10e114]: "ساعات پاسخگویی: ۹ صبح تا ۱۸"
+        - paragraph [ref=f10e116]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - status [ref=f10e117]

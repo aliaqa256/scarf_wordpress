@@ -1,0 +1,425 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e2]:
+    - link "پرش به محتوای اصلی" [ref=f15e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f15e4]:
+      - generic [ref=f15e6]:
+        - link "scarf" [ref=f15e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f15e10]:
+          - generic [ref=f15e11]: جست‌وجو در فروشگاه
+          - generic [ref=f15e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f15e13]
+            - button "جست‌وجو" [ref=f15e14] [cursor=pointer]
+        - generic [ref=f15e15]:
+          - link "حساب کاربری" [ref=f15e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید 1" [ref=f15e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+            - text: سبد خرید
+            - generic [ref=f15e18]: "1"
+      - button "باز کردن منو" [ref=f15e21] [cursor=pointer]
+    - main [ref=f15e24]:
+      - generic [ref=f15e26]:
+        - form "تسویه حساب" [ref=f15e28]:
+          - group "اطلاعات تماس" [ref=f15e29]:
+            - heading "اطلاعات تماس" [level=2] [ref=f15e33]
+            - generic [ref=f15e35]:
+              - generic [ref=f15e36]:
+                - textbox "آدرس ایمیل" [ref=f15e37]
+                - generic [ref=f15e38]: آدرس ایمیل
+              - paragraph [ref=f15e39]: شما در حال حاضر به عنوان مهمان در حال بررسی هستید.
+          - group "آدرس صورتحساب" [ref=f15e40]:
+            - heading "آدرس صورتحساب" [level=2] [ref=f15e44]
+            - generic [ref=f15e48]:
+              - generic [ref=f15e51]:
+                - generic [ref=f15e52]: کشور / منطقه
+                - combobox "کشور / منطقه" [ref=f15e53]:
+                  - option "یک کشور / منطقه انتخاب کنید" [disabled]
+                  - option "Åland Islands"
+                  - option "American Samoa"
+                  - option "Bonaire, Saint Eustatius and Saba"
+                  - option "Bosnia and Herzegovina"
+                  - option "Botswana"
+                  - option "Bouvet Island"
+                  - option "Brazil"
+                  - option "British Indian Ocean Territory"
+                  - option "Brunei"
+                  - option "Bulgaria"
+                  - option "Burkina Faso"
+                  - option "Burundi"
+                  - option "Cambodia"
+                  - option "Cameroon"
+                  - option "Canada"
+                  - option "Cape Verde"
+                  - option "Cayman Islands"
+                  - option "Central African Republic"
+                  - option "Chad"
+                  - option "Chile"
+                  - option "China"
+                  - option "Christmas Island"
+                  - option "Cocos (Keeling) Islands"
+                  - option "Colombia"
+                  - option "Comoros"
+                  - option "Congo (Brazzaville)"
+                  - option "Congo (Kinshasa)"
+                  - option "Cook Islands"
+                  - option "Costa Rica"
+                  - option "Croatia"
+                  - option "Cuba"
+                  - option "Curaçao"
+                  - option "Cyprus"
+                  - option "Czech Republic"
+                  - option "Denmark"
+                  - option "Djibouti"
+                  - option "Dominica"
+                  - option "Dominican Republic"
+                  - option "Ecuador"
+                  - option "Egypt"
+                  - option "El Salvador"
+                  - option "Equatorial Guinea"
+                  - option "Eritrea"
+                  - option "Estonia"
+                  - option "Eswatini"
+                  - option "Ethiopia"
+                  - option "Falkland Islands"
+                  - option "Faroe Islands"
+                  - option "Fiji"
+                  - option "Finland"
+                  - option "France"
+                  - option "French Guiana"
+                  - option "French Polynesia"
+                  - option "French Southern Territories"
+                  - option "Gabon"
+                  - option "Gambia"
+                  - option "Georgia"
+                  - option "Germany"
+                  - option "Ghana"
+                  - option "Gibraltar"
+                  - option "Greece"
+                  - option "Greenland"
+                  - option "Grenada"
+                  - option "Guadeloupe"
+                  - option "Guam"
+                  - option "Guatemala"
+                  - option "Guernsey"
+                  - option "Guinea"
+                  - option "Guinea-Bissau"
+                  - option "Guyana"
+                  - option "Haiti"
+                  - option "Heard Island and McDonald Islands"
+                  - option "Honduras"
+                  - option "Hong Kong"
+                  - option "Hungary"
+                  - option "Iceland"
+                  - option "India"
+                  - option "Indonesia"
+                  - option "Iraq"
+                  - option "Ireland"
+                  - option "Isle of Man"
+                  - option "Israel"
+                  - option "Italy"
+                  - option "Ivory Coast"
+                  - option "Jamaica"
+                  - option "Japan"
+                  - option "Jersey"
+                  - option "Jordan"
+                  - option "Kazakhstan"
+                  - option "Kenya"
+                  - option "Kiribati"
+                  - option "Kosovo"
+                  - option "Kuwait"
+                  - option "Kyrgyzstan"
+                  - option "Laos"
+                  - option "Latvia"
+                  - option "Lebanon"
+                  - option "Lesotho"
+                  - option "Liberia"
+                  - option "Libya"
+                  - option "Liechtenstein"
+                  - option "Lithuania"
+                  - option "Luxembourg"
+                  - option "Macao"
+                  - option "Madagascar"
+                  - option "Malawi"
+                  - option "Malaysia"
+                  - option "Maldives"
+                  - option "Mali"
+                  - option "Malta"
+                  - option "Marshall Islands"
+                  - option "Martinique"
+                  - option "Mauritania"
+                  - option "Mauritius"
+                  - option "Mayotte"
+                  - option "Mexico"
+                  - option "Micronesia"
+                  - option "Moldova"
+                  - option "Monaco"
+                  - option "Mongolia"
+                  - option "Montenegro"
+                  - option "Montserrat"
+                  - option "Morocco"
+                  - option "Mozambique"
+                  - option "Myanmar"
+                  - option "Namibia"
+                  - option "Nauru"
+                  - option "Nepal"
+                  - option "Netherlands"
+                  - option "New Caledonia"
+                  - option "New Zealand"
+                  - option "Nicaragua"
+                  - option "Niger"
+                  - option "Nigeria"
+                  - option "Niue"
+                  - option "Norfolk Island"
+                  - option "North Korea"
+                  - option "North Macedonia"
+                  - option "Northern Mariana Islands"
+                  - option "Norway"
+                  - option "Oman"
+                  - option "Pakistan"
+                  - option "Palestinian Territory"
+                  - option "Panama"
+                  - option "Papua New Guinea"
+                  - option "Paraguay"
+                  - option "Peru"
+                  - option "Philippines"
+                  - option "Pitcairn"
+                  - option "Poland"
+                  - option "Portugal"
+                  - option "Puerto Rico"
+                  - option "Qatar"
+                  - option "Reunion"
+                  - option "Romania"
+                  - option "Russia"
+                  - option "Rwanda"
+                  - option "Saint Barthélemy"
+                  - option "Saint Helena"
+                  - option "Saint Kitts and Nevis"
+                  - option "Saint Lucia"
+                  - option "Saint Martin (Dutch part)"
+                  - option "Saint Martin (French part)"
+                  - option "Saint Pierre and Miquelon"
+                  - option "Saint Vincent and the Grenadines"
+                  - option "Samoa"
+                  - option "San Marino"
+                  - option "São Tomé and Príncipe"
+                  - option "Saudi Arabia"
+                  - option "Senegal"
+                  - option "Serbia"
+                  - option "Seychelles"
+                  - option "Sierra Leone"
+                  - option "Singapore"
+                  - option "Slovakia"
+                  - option "Slovenia"
+                  - option "Solomon Islands"
+                  - option "Somalia"
+                  - option "South Africa"
+                  - option "South Georgia/Sandwich Islands"
+                  - option "South Korea"
+                  - option "South Sudan"
+                  - option "Spain"
+                  - option "Sri Lanka"
+                  - option "Sudan"
+                  - option "Suriname"
+                  - option "Svalbard and Jan Mayen"
+                  - option "Sweden"
+                  - option "Switzerland"
+                  - option "Syria"
+                  - option "Taiwan"
+                  - option "Tajikistan"
+                  - option "Tanzania"
+                  - option "Thailand"
+                  - option "Timor-Leste"
+                  - option "Togo"
+                  - option "Tokelau"
+                  - option "Tonga"
+                  - option "Trinidad and Tobago"
+                  - option "Tunisia"
+                  - option "Turkmenistan"
+                  - option "Turks and Caicos Islands"
+                  - option "Tuvalu"
+                  - option "Uganda"
+                  - option "Ukraine"
+                  - option "United Arab Emirates"
+                  - option "United Kingdom (UK)"
+                  - option "United States (US)"
+                  - option "United States (US) Minor Outlying Islands"
+                  - option "Uruguay"
+                  - option "Uzbekistan"
+                  - option "Vanuatu"
+                  - option "Vatican"
+                  - option "Venezuela"
+                  - option "Vietnam"
+                  - option "Virgin Islands (British)"
+                  - option "Virgin Islands (US)"
+                  - option "Wallis and Futuna"
+                  - option "Western Sahara"
+                  - option "Yemen"
+                  - option "Zambia"
+                  - option "Zimbabwe"
+                  - option "آذربایجان"
+                  - option "آروبا"
+                  - option "آرژانتین"
+                  - option "آلبانی"
+                  - option "آنتیگوا و باربودا"
+                  - option "آندورا"
+                  - option "آنگولا"
+                  - option "آنگویلا"
+                  - option "اتریش"
+                  - option "ارمنستان"
+                  - option "استرالیا"
+                  - option "افغانستان"
+                  - option "الجزایر"
+                  - option "ایران" [selected]
+                  - option "باربادوس"
+                  - option "باهاما"
+                  - option "بحرین"
+                  - option "برمودا"
+                  - option "بلائو"
+                  - option "بلاروس"
+                  - option "بلژیک"
+                  - option "بلیز"
+                  - option "بنگلادش"
+                  - option "بنین"
+                  - option "بوتان"
+                  - option "بولیوی"
+                  - option "ترکیه"
+                  - option "قطب جنوب"
+              - generic [ref=f15e54]:
+                - textbox "نام" [ref=f15e55]
+                - generic [ref=f15e56]: نام
+              - generic [ref=f15e57]:
+                - textbox "نام خانوادگی" [ref=f15e58]
+                - generic [ref=f15e59]: نام خانوادگی
+              - generic [ref=f15e62]:
+                - generic [ref=f15e63]: استان
+                - combobox "استان" [ref=f15e64]:
+                  - option "یک استان انتخاب کنید" [disabled]
+                  - option "خوزستان"
+                  - option "تهران" [selected]
+                  - option "ایلام"
+                  - option "بوشهر"
+                  - option "اردبیل"
+                  - option "اصفهان"
+                  - option "یزد"
+                  - option "کرمانشاه"
+                  - option "کرمان"
+                  - option "همدان"
+                  - option "قزوین"
+                  - option "زنجان"
+                  - option "لرستان"
+                  - option "البرز"
+                  - option "آذربایجان شرقی"
+                  - option "آذربایجان غربی"
+                  - option "چهارمحال و بختیاری"
+                  - option "خراسان جنوبی"
+                  - option "خراسان رضوی"
+                  - option "خراسان شمالی"
+                  - option "سمنان"
+                  - option "فارس"
+                  - option "قم"
+                  - option "Kurdistan (کردستان)"
+                  - option "کهگیلویه و بویراحمد"
+                  - option "گلستان"
+                  - option "گیلان"
+                  - option "مازندران"
+                  - option "مرکزی"
+                  - option "هرمزگان"
+                  - option "سیستان و بلوچستان"
+              - generic [ref=f15e65]:
+                - textbox "شهر" [ref=f15e66]
+                - generic [ref=f15e67]: شهر
+              - generic [ref=f15e68]:
+                - textbox "نشانی" [ref=f15e69]
+                - generic [ref=f15e70]: نشانی
+              - button "+ افزودن آپارتمان ، سوئیت و غیره." [ref=f15e71] [cursor=pointer]
+              - textbox [ref=f15e72]
+              - generic [ref=f15e73]:
+                - textbox "کد پستی" [ref=f15e74]
+                - generic [ref=f15e75]: کد پستی
+              - generic [ref=f15e76]:
+                - textbox "شماره تماس (اختیاری)" [ref=f15e77]
+                - generic [ref=f15e78]: شماره تماس (اختیاری)
+          - group "گزینه‌های پرداخت" [ref=f15e79]:
+            - heading "گزینه‌های پرداخت" [level=2] [ref=f15e83]
+            - generic [ref=f15e84]: هیچ روش پرداختی در دسترس نیست. لطفا برای راهنمایی در ثبت سفارش خود، با ما تماس بگیرید.
+          - generic [ref=f15e93] [cursor=pointer]:
+            - checkbox "یادداشتی را به سفارش خود اضافه کنید" [ref=f15e94]
+            - generic [ref=f15e95]: یادداشتی را به سفارش خود اضافه کنید
+          - generic [ref=f15e96]: با ادامه خرید، با شرایط و ضوابط و سیاست حفظ حریم خصوصی ما موافقت می‌کنید
+          - generic [ref=f15e97]:
+            - generic [ref=f15e99]:
+              - heading "خلاصۀ سفارش" [level=2] [ref=f15e101]
+              - generic [ref=f15e102]:
+                - generic "در حال بارگذاری محصولات در سبد خرید…" [ref=f15e104]
+                - heading [level=2] [ref=f15e115]:
+                  - button "اضافه کردن کوپن‌های تخفیف" [ref=f15e116] [cursor=pointer]
+                - generic [ref=f15e121]:
+                  - generic [ref=f15e122]: جمع جزء
+                  - generic "در حال بارگذاری قیمت…" [ref=f15e123]
+                - generic [ref=f15e125]:
+                  - generic [ref=f15e126]: مجموع
+                  - generic "در حال بارگذاری قیمت…" [ref=f15e127]
+            - button "ثبت سفارش" [ref=f15e129] [cursor=pointer]
+        - button "خلاصۀ سفارش ﷼111" [ref=f15e134] [cursor=pointer]:
+          - heading "خلاصۀ سفارش" [level=2] [ref=f15e135]
+          - generic [ref=f15e136]: ﷼111
+    - contentinfo [ref=f15e140]:
+      - generic [ref=f15e141]:
+        - generic [ref=f15e143]:
+          - generic [ref=f15e144]: ارسال سریع سفارش‌ها
+          - generic [ref=f15e152]: ضمانت بازگشت کالا
+          - generic [ref=f15e158]: پرداخت امن
+          - generic [ref=f15e163]: پشتیبانی خرید
+        - generic [ref=f15e168]:
+          - generic [ref=f15e169]:
+            - heading "راهنمای خرید" [level=3] [ref=f15e170]
+            - list [ref=f15e171]:
+              - listitem [ref=f15e172]:
+                - link "راهنمای انتخاب شال" [ref=f15e173] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f15e174]:
+                - link "روش‌های ارسال" [ref=f15e175] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f15e176]:
+                - link "روش‌های پرداخت" [ref=f15e177] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f15e178]:
+                - link "ضمانت بازگشت کالا" [ref=f15e179] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f15e180]:
+            - heading "خدمات مشتریان" [level=3] [ref=f15e181]
+            - list [ref=f15e182]:
+              - listitem [ref=f15e183]:
+                - link "تماس با ما" [ref=f15e184] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f15e185]:
+                - link "سوالات متداول" [ref=f15e186] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f15e187]:
+                - link "قوانین و مقررات" [ref=f15e188] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f15e189]:
+                - link "حریم خصوصی" [ref=f15e190] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f15e191]:
+            - heading "درباره فروشگاه" [level=3] [ref=f15e192]
+            - paragraph [ref=f15e193]: فروشگاه تخصصی شال و روسری با انواع مدل‌های روز و کلاسیک. تضمین اصالت و کیفیت محصولات.
+            - generic [ref=f15e194]:
+              - link "اینستاگرام" [ref=f15e195] [cursor=pointer]:
+                - /url: "#"
+              - link "تلگرام" [ref=f15e199] [cursor=pointer]:
+                - /url: "#"
+              - link "واتساپ" [ref=f15e203] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f15e206]:
+            - heading "ارتباط با ما" [level=3] [ref=f15e207]
+            - paragraph [ref=f15e208]: "تلفن: ۰۲۱-۱۲۳۴۵۶۷۸"
+            - paragraph [ref=f15e209]: "ایمیل: info@scarfstore.ir"
+            - paragraph [ref=f15e210]: "ساعات پاسخگویی: ۹ صبح تا ۱۸"
+        - paragraph [ref=f15e212]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - paragraph [ref=f15e213]: آگاه‌سازی‌ها
+  - generic [ref=f15e214]: هیچ روش پرداختی در دسترس نیست. لطفا برای راهنمایی در ثبت سفارش خود، با ما تماس بگیرید.
+  - status [ref=f15e216]

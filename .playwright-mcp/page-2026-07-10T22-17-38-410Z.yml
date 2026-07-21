@@ -1,0 +1,119 @@
+- generic [active] [ref=f30e1]:
+  - generic [ref=f30e2]:
+    - link "پرش به محتوای اصلی" [ref=f30e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f30e4]:
+      - generic [ref=f30e6]:
+        - link "scarf" [ref=f30e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f30e10]:
+          - generic [ref=f30e11]: جست‌وجو در فروشگاه
+          - generic [ref=f30e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f30e13]
+            - button "جست‌وجو" [ref=f30e14] [cursor=pointer]
+        - generic [ref=f30e15]:
+          - link "حساب کاربری" [ref=f30e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید 1" [ref=f30e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+            - text: سبد خرید
+            - generic [ref=f30e18]: "1"
+      - navigation "منوی اصلی" [ref=f30e21]:
+        - list [ref=f30e22]:
+          - listitem [ref=f30e23]:
+            - link "خانه" [ref=f30e24] [cursor=pointer]:
+              - /url: http://localhost/
+          - listitem [ref=f30e25]:
+            - link "فروشگاه" [ref=f30e26] [cursor=pointer]:
+              - /url: http://localhost/shop/
+          - listitem [ref=f30e27]:
+            - link "ورود | ثبت‌نام" [ref=f30e28] [cursor=pointer]:
+              - /url: http://localhost/login/
+    - generic [ref=f30e29]:
+      - main [ref=f30e32]:
+        - navigation "Breadcrumb" [ref=f30e33]:
+          - link "خانه" [ref=f30e34] [cursor=pointer]:
+            - /url: http://localhost
+          - text: / Shop
+        - heading "Shop" [level=1] [ref=f30e36]
+        - status [ref=f30e37]: در حال نمایش یک نتیجه
+        - combobox "سفارش خرید" [ref=f30e39] [cursor=pointer]:
+          - option "مرتب‌سازی پیشفرض" [selected]
+          - option "مرتب‌سازی بر اساس محبوبیت"
+          - option "مرتب‌سازی بر اساس امتیاز"
+          - option "مرتب‌سازی بر اساس جدیدترین"
+          - option "مرتب‌سازی بر اساس ارزانترین"
+          - option "مرتب‌سازی بر اساس گرانترین"
+        - list [ref=f30e40]:
+          - listitem [ref=f30e41]:
+            - link "تست ۱ 99% تست ۱ قیمت اصلی ﷼11.111 بود. قیمت فعلی ﷼111 است." [ref=f30e42] [cursor=pointer]:
+              - /url: http://localhost/product/%d8%aa%d8%b3%d8%aa-%db%b1/
+              - img "تست ۱" [ref=f30e43]
+              - generic [ref=f30e44]: 99%
+              - heading "تست ۱" [level=2] [ref=f30e45]
+              - generic [ref=f30e46]:
+                - deletion [ref=f30e47]:
+                  - generic [ref=f30e48]: ﷼11.111
+                - generic [ref=f30e50]: قیمت اصلی ﷼11.111 بود.
+                - insertion [ref=f30e51]:
+                  - generic [ref=f30e52]: ﷼111
+                - generic [ref=f30e54]: قیمت فعلی ﷼111 است.
+            - 'button "افزودن به سبد خرید: “تست ۱”" [ref=f30e55] [cursor=pointer]': افزودن به سبد خرید
+      - complementary "فیلتر محصولات" [ref=f30e57]:
+        - paragraph [ref=f30e59]: برای فیلتر محصولات از بخش نمایش > ویجت‌ها استفاده کنید.
+    - contentinfo [ref=f30e60]:
+      - generic [ref=f30e61]:
+        - generic [ref=f30e63]:
+          - generic [ref=f30e64]: ارسال سریع سفارش‌ها
+          - generic [ref=f30e72]: ضمانت بازگشت کالا
+          - generic [ref=f30e78]: پرداخت امن
+          - generic [ref=f30e83]: پشتیبانی خرید
+        - generic [ref=f30e88]:
+          - generic [ref=f30e89]:
+            - heading "راهنمای خرید" [level=3] [ref=f30e90]
+            - list [ref=f30e91]:
+              - listitem [ref=f30e92]:
+                - link "راهنمای انتخاب شال" [ref=f30e93] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f30e94]:
+                - link "روش‌های ارسال" [ref=f30e95] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f30e96]:
+                - link "روش‌های پرداخت" [ref=f30e97] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f30e98]:
+                - link "ضمانت بازگشت کالا" [ref=f30e99] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f30e100]:
+            - heading "خدمات مشتریان" [level=3] [ref=f30e101]
+            - list [ref=f30e102]:
+              - listitem [ref=f30e103]:
+                - link "تماس با ما" [ref=f30e104] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f30e105]:
+                - link "سوالات متداول" [ref=f30e106] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f30e107]:
+                - link "قوانین و مقررات" [ref=f30e108] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f30e109]:
+                - link "حریم خصوصی" [ref=f30e110] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f30e111]:
+            - heading "درباره فروشگاه" [level=3] [ref=f30e112]
+            - paragraph [ref=f30e113]: فروشگاه تخصصی شال و روسری با انواع مدل‌های روز و کلاسیک. تضمین اصالت و کیفیت محصولات.
+            - generic [ref=f30e114]:
+              - link "اینستاگرام" [ref=f30e115] [cursor=pointer]:
+                - /url: "#"
+              - link "تلگرام" [ref=f30e119] [cursor=pointer]:
+                - /url: "#"
+              - link "واتساپ" [ref=f30e123] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f30e126]:
+            - heading "ارتباط با ما" [level=3] [ref=f30e127]
+            - paragraph [ref=f30e128]: "تلفن: ۰۲۱-۱۲۳۴۵۶۷۸"
+            - paragraph [ref=f30e129]: "ایمیل: info@scarfstore.ir"
+            - paragraph [ref=f30e130]: "ساعات پاسخگویی: ۹ صبح تا ۱۸"
+        - paragraph [ref=f30e132]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - status [ref=f30e133]

@@ -1,0 +1,79 @@
+- generic [active] [ref=f25e1]:
+  - generic [ref=f25e2]:
+    - link "پرش به محتوای اصلی" [ref=f25e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f25e4]:
+      - generic [ref=f25e6]:
+        - link "scarf" [ref=f25e8] [cursor=pointer]:
+          - /url: http://localhost/
+        - search [ref=f25e10]:
+          - generic [ref=f25e11]: جست‌وجو در فروشگاه
+          - generic [ref=f25e12]:
+            - searchbox "جست‌وجوی شال، روسری، رنگ یا طرح" [ref=f25e13]
+            - button "جست‌وجو" [ref=f25e14] [cursor=pointer]
+        - generic [ref=f25e15]:
+          - link "حساب کاربری" [ref=f25e16] [cursor=pointer]:
+            - /url: http://localhost/login/
+          - link "سبد خرید 1" [ref=f25e17] [cursor=pointer]:
+            - /url: http://localhost/cart/
+            - text: سبد خرید
+            - generic [ref=f25e18]: "1"
+      - button "باز کردن منو" [ref=f25e21] [cursor=pointer]
+    - main [ref=f25e24]:
+      - paragraph [ref=f25e25]: به وردپرس خوش آمدید. این اولین نوشتهٔ شماست. این را ویرایش یا حذف کنید، سپس نوشتن را شروع نمایید!
+    - contentinfo [ref=f25e26]:
+      - generic [ref=f25e27]:
+        - generic [ref=f25e29]:
+          - generic [ref=f25e30]: ارسال سریع سفارش‌ها
+          - generic [ref=f25e38]: ضمانت بازگشت کالا
+          - generic [ref=f25e44]: پرداخت امن
+          - generic [ref=f25e49]: پشتیبانی خرید
+        - generic [ref=f25e54]:
+          - generic [ref=f25e55]:
+            - heading "راهنمای خرید" [level=3] [ref=f25e56]
+            - list [ref=f25e57]:
+              - listitem [ref=f25e58]:
+                - link "راهنمای انتخاب شال" [ref=f25e59] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f25e60]:
+                - link "روش‌های ارسال" [ref=f25e61] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f25e62]:
+                - link "روش‌های پرداخت" [ref=f25e63] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f25e64]:
+                - link "ضمانت بازگشت کالا" [ref=f25e65] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f25e66]:
+            - heading "خدمات مشتریان" [level=3] [ref=f25e67]
+            - list [ref=f25e68]:
+              - listitem [ref=f25e69]:
+                - link "تماس با ما" [ref=f25e70] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f25e71]:
+                - link "سوالات متداول" [ref=f25e72] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f25e73]:
+                - link "قوانین و مقررات" [ref=f25e74] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f25e75]:
+                - link "حریم خصوصی" [ref=f25e76] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f25e77]:
+            - heading "درباره فروشگاه" [level=3] [ref=f25e78]
+            - paragraph [ref=f25e79]: فروشگاه تخصصی شال و روسری با انواع مدل‌های روز و کلاسیک. تضمین اصالت و کیفیت محصولات.
+            - generic [ref=f25e80]:
+              - link "اینستاگرام" [ref=f25e81] [cursor=pointer]:
+                - /url: "#"
+              - link "تلگرام" [ref=f25e85] [cursor=pointer]:
+                - /url: "#"
+              - link "واتساپ" [ref=f25e89] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f25e92]:
+            - heading "ارتباط با ما" [level=3] [ref=f25e93]
+            - paragraph [ref=f25e94]: "تلفن: ۰۲۱-۱۲۳۴۵۶۷۸"
+            - paragraph [ref=f25e95]: "ایمیل: info@scarfstore.ir"
+            - paragraph [ref=f25e96]: "ساعات پاسخگویی: ۹ صبح تا ۱۸"
+        - paragraph [ref=f25e98]: تمام حقوق محفوظ است © 2026
+  - text: 
+  - status [ref=f25e99]
