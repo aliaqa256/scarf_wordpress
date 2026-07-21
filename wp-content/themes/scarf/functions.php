@@ -89,15 +89,21 @@ add_action( 'after_setup_theme', 'scarf_setup' );
 /**
  * Register custom shortcodes.
  */
-function scarf_dynamic_categories_shortcode() {
+function scarf_dynamic_categories_shortcode( $atts ) {
     if ( ! class_exists( 'WooCommerce' ) ) {
         return '<p>' . esc_html__( 'WooCommerce is not active.', 'scarf' ) . '</p>';
     }
 
+    $atts = shortcode_atts( array(
+        'count' => 6,
+        'columns' => 6,
+        'hide_empty' => false,
+    ), $atts, 'scarf_dynamic_categories' );
+
     $terms = get_terms( array(
         'taxonomy'   => 'product_cat',
-        'hide_empty' => false, // Set to true if you only want categories with products
-        'number'     => 6,
+        'hide_empty' => filter_var( $atts['hide_empty'], FILTER_VALIDATE_BOOLEAN ),
+        'number'     => intval( $atts['count'] ),
     ) );
 
     if ( is_wp_error( $terms ) || empty( $terms ) ) {
@@ -146,6 +152,8 @@ add_action( 'init', 'scarf_register_block_patterns' );
  */
 function scarf_scripts() {
 	wp_enqueue_style( 'scarf-style', get_stylesheet_uri(), array(), '1.0.0' );
+    wp_enqueue_style( 'scarf-carousel', get_template_directory_uri() . '/assets/css/carousel.css', array(), '1.0.0' );
+    wp_enqueue_script( 'scarf-carousel', get_template_directory_uri() . '/assets/js/carousel.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
