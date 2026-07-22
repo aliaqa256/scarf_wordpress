@@ -1,0 +1,107 @@
+/*
+Theme Name: Made In Heart
+Theme URI:
+Author: Expert Senior Full-Stack WordPress Developer
+Author URI:
+Description: Custom WordPress Block Theme (FSE) built from scratch.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: madeinheart
+Tags: full-site-editing, block-patterns, custom-colors, block-styles, wide-blocks
+*/
+
+/* ==========================================================================
+   CSS Reset & Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	direction: rtl; /* Mandatory RTL support for Persian */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography elements reset */
+h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+img, picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* ==========================================================================
+   Forms & Buttons Reset and Styling
+   ========================================================================== */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
+textarea {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: var(--wp--preset--color--surface);
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: 8px;
+	padding: 0.5rem 1rem;
+	width: 100%;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--wp--preset--color--secondary);
+	box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.2); /* Secondary color with opacity */
+}
+
+/* Basic Button Styling matching the warm design */
+button,
+input[type="submit"],
+input[type="button"],
+.wp-block-button__link {
+	appearance: none;
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--surface);
+	border: 1px solid transparent;
+	border-radius: 8px;
+	padding: 0.5rem 1.5rem;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--secondary);
+}
